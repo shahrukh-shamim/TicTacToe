@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic Tac Toe</title>
+	<link rel="stylesheet" type="text/css" href="svg.css">
+	<script type="text/javascript" src="contentHandle.js"></script>
+</head>
+<body id="body">
+<svg id='mySVG' viewBox='0 0 600 600'>
+
+<!-- SVG for circles -->
+
+	<circle cx="200" cy="200" r="40" stroke="green" stroke-width="0" fill-opacity="0.1" fill="white" id='c1' />
+	<circle cx="300" cy="200" r="40" stroke="green" stroke-width="0" fill-opacity="0.1" fill="white" id='c2' />
+	<circle cx="400" cy="200" r="40" stroke="green" stroke-width="0" fill-opacity="0.1" fill="white" id='c3' />
+	<circle cx="200" cy="300" r="40" stroke="green" stroke-width="0" fill-opacity="0.1" fill="white" id='c4' />
+	<circle cx="300" cy="300" r="40" stroke="green" stroke-width="0" fill-opacity="0.1" fill="white" id='c5' />
+	<circle cx="400" cy="300" r="40" stroke="green" stroke-width="0" fill-opacity="0.1" fill="white" id='c6' />
+	<circle cx="200" cy="400" r="40" stroke="green" stroke-width="0" fill-opacity="0.1" fill="white" id='c7' />
+	<circle cx="300" cy="400" r="40" stroke="green" stroke-width="0" fill-opacity="0.1" fill="white" id='c8' />
+	<circle cx="400" cy="400" r="40" stroke="green" stroke-width="0" fill-opacity="0.1" fill="white" id='c9' />
+<!-- End CIRCLES -->
+
+
+<!-- All CROSS -->
+
+	<line x1="170" y1="170" class='1' x2="230" y2="230" style="stroke:rgb(255,0,255);stroke-width:0" />
+	<line x1="230" y1="170" class='1' x2="170" y2="230" style="stroke:rgb(255,0,255);stroke-width:0" />
+ 
+	<line x1="270" y1="170" class='2' x2="330" y2="230" style="stroke:rgb(255,0,255);stroke-width:0" />
+	<line x1="330" y1="170" class='2' x2="270" y2="230" style="stroke:rgb(255,0,255);stroke-width:0" />
+ 
+	<line x1="370" y1="170" class='3' x2="430" y2="230" style="stroke:rgb(255,0,255);stroke-width:0" />
+	<line x1="430" y1="170" class='3' x2="370" y2="230" style="stroke:rgb(255,0,255);stroke-width:0" />
+	 
+	<line x1="170" y1="270" class='4' x2="230" y2="330" style="stroke:rgb(255,0,255);stroke-width:0" />
+	<line x1="230" y1="270" class='4' x2="170" y2="330" style="stroke:rgb(255,0,255);stroke-width:0" />
+	 
+	<line x1="270" y1="270" class='5' x2="330" y2="330" style="stroke:rgb(255,0,255);stroke-width:0" />
+	<line x1="330" y1="270" class='5' x2="270" y2="330" style="stroke:rgb(255,0,255);stroke-width:0" />
+ 
+	<line x1="370" y1="270" class='6' x2="430" y2="330" style="stroke:rgb(255,0,255);stroke-width:0" />
+	<line x1="430" y1="270" class='6' x2="370" y2="330" style="stroke:rgb(255,0,255);stroke-width:0" />
+ 
+	<line x1="170" y1="370" class='7' x2="230" y2="430" style="stroke:rgb(255,0,255);stroke-width:0" />
+	<line x1="230" y1="370" class='7' x2="170" y2="430" style="stroke:rgb(255,0,255);stroke-width:0" />
+ 
+	<line x1="270" y1="370" class='8' x2="330" y2="430" style="stroke:rgb(255,0,255);stroke-width:0" />
+	<line x1="330" y1="370" class='8' x2="270" y2="430" style="stroke:rgb(255,0,255);stroke-width:0" />
+ 
+	<line x1="370" y1="370" class='9' x2="430" y2="430" style="stroke:rgb(255,0,255);stroke-width:0" />
+	<line x1="430" y1="370" class='9' x2="370" y2="430" style="stroke:rgb(255,0,255);stroke-width:0" />
+<!-- END CROSS -->
+	
+<!-- All Boxes of TIC TAC TOE -->
+
+	<rect x="-300" y="-300" width="100" height="100" data-occupied='false' fill="#ffffff" fill-opacity="0.1" stroke-width="5" stroke="#000000" id="rect1" class='rects' />
+	<rect x="-200" y="-300" width="100" height="100" data-occupied='false' fill="#ffffff" fill-opacity="0.1" stroke-width="5" stroke="#000000" id="rect2" class='rects' />
+	<rect x="-100" y="-300" width="100" height="100" data-occupied='false' fill="#ffffff" fill-opacity="0.1" stroke-width="5" stroke="#000000" id="rect3" class='rects' />
+	<rect x="-300" y="-200" width="100" height="100" data-occupied='false' fill="#ffffff" fill-opacity="0.1" stroke-width="5" stroke="#000000" id="rect4" class='rects' />
+	<rect x="-200" y="-200" width="100" height="100" data-occupied='false' fill="#ffffff" fill-opacity="0.1" stroke-width="5" stroke="#000000" id="rect5" class='rects' />
+	<rect x="-100" y="-200" width="100" height="100" data-occupied='false' fill="#ffffff" fill-opacity="0.1" stroke-width="5" stroke="#000000" id="rect6" class='rects' />
+	<rect x="-300" y="-100" width="100" height="100" data-occupied='false' fill="#ffffff" fill-opacity="0.1" stroke-width="5" stroke="#000000" id="rect7" class='rects' />
+	<rect x="-200" y="-100" width="100" height="100" data-occupied='false' fill="#ffffff" fill-opacity="0.1" stroke-width="5" stroke="#000000" id="rect8" class='rects' />
+	<rect x="-100" y="-100" width="100" height="100" data-occupied='false' fill="#ffffff" fill-opacity="0.1" stroke-width="5" stroke="#000000" id="rect9" class='rects' />
+<!-- End of Boxes -->
+
+<!-- Victory lines -->
+
+<line x1="150" y1="200" id='0012' x2="150" y2="200" style="stroke:rgb(255,0,0);stroke-width:5" /> <!-- Add 300 in x2 -->
+<line x1="150" y1="300" id='1012' x2="150" y2="300" style="stroke:rgb(255,0,0);stroke-width:5" /> <!-- Add 300 in x2 -->
+<line x1="150" y1="400" id='2012' x2="150" y2="400" style="stroke:rgb(255,0,0);stroke-width:5" /> <!-- Add 300 in x2 -->
+
+<line x1="200" y1="150" id='0120' x2="200" y2="150" style="stroke:rgb(255,0,0);stroke-width:5" /> <!-- Add 300 in y2 -->
+<line x1="300" y1="150" id='0121' x2="300" y2="150" style="stroke:rgb(255,0,0);stroke-width:5" /> <!-- Add 300 in y2 -->
+<line x1="400" y1="150" id='0122' x2="400" y2="150" style="stroke:rgb(255,0,0);stroke-width:5" /> <!-- Add 300 in y2 -->
+
+<line x1="150" y1="150" id='012' x2="150" y2="150"  style="stroke:rgb(255,0,0);stroke-width:5" />
+<line x1="450" y1="150" id='210' x2="450" y2="150"  style="stroke:rgb(255,0,0);stroke-width:5" />
+</svg>
+<script type="text/javascript" src="animation.js">
+</script>
+<script type="text/javascript">
+	createTicTacToe();
+</script>
+
+<script type="text/javascript">
+
+function changeGeometry()
+{
+	var svg  = document.getElementById('mySVG');
+	var body = document.getElementById('body');
+
+	var width = body.offsetWidth = screen.width;
+	var mar = width/3.4285714285714284;
+	svg.style.marginLeft = mar;
+
+	var widthRatio = 2.4;
+	var heightRatio = 1.5;
+
+	var screenWidth = screen.width;
+	var screenHeight = screen.height;
+
+	svg.style.width = (screenWidth/widthRatio);
+	svg.style.height = (screenHeight/heightRatio);
+
+}
+
+var addEvent = function(object, type, callback)
+{
+    if (object == null || typeof(object) == 'undefined') return;
+    if (object.addEventListener) {
+        object.addEventListener(type, callback, false);
+    } else if (object.attachEvent) {
+        object.attachEvent("on" + type, callback);
+    } else {
+        object["on"+type] = callback;
+    }
+};
+
+addEvent(window, "resize", changeGeometry);
+
+</script>
+
+<script type="text/javascript" src='game.js'></script>
+</body>
+</html>
