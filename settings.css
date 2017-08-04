@@ -1,0 +1,98 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+html
+{
+    height: 100%;
+}
+body
+{
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+/* For Symbols */
+
+#symbols
+{
+    justify-content: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid grey;
+}
+
+#symbols img
+{
+    width: 10px;
+    height: 10px;
+}
+
+#symbols p
+{
+    text-align: center;
+}
+
+#symbols h3
+{
+    text-align: center;
+}
+
+/* For Colors */
+
+#colors
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 10px 0 10px 0;
+    border-bottom: 2px solid grey;
+}
+
+#colors div
+{
+    width: 20px;
+    height: 20px;
+}
+
+#colors div#pink
+{
+    background: rgb(255,0,255);
+}
+
+#colors div#green
+{
+    background: green;
+}
+
+#colors div#white
+{
+    background: white;
+}
+
+/* For difficulty */
+
+#difficulty
+{
+    margin-bottom: 10px;
+    border-bottom: 2px solid grey;
+}
+
+#difficulty div
+{
+    border-radius: 5%;
+}
+
+/* For First turn */
+
+#ft
+{
+    border-bottom: 2px solid grey;
+}
