@@ -119,7 +119,10 @@ board =
 ];
 /*	-------	*/
 
-/*Setting color, level, symbols (marks) and whose turn is it first (using user variable) according to player defined settings stored in cookies*/
+/*
+	Setting color, level, symbols (marks) and whose turn is it first (using user variable)
+				according to player defined settings stored in cookies
+*/
 
 var colors = getCookie('colors');
 var level  = getCookie('level');
