@@ -67,36 +67,38 @@ function isWin() // for computer lose
 function isLoss() // For computer wins
 {
 
+	/* Checking for first diagonal */
 	if( (board[0][0] === board[1][1]) && (board[1][1] === board[2][2]) && (board[2][2] === 2) )
 	{
-		var line = document.getElementById('012');
+		let line = document.getElementById('012');
 		line.x2.baseVal.value += 300;
 		line.y2.baseVal.value += 300;
 		return true;
 	}
-
+	/* Checking for second diagonal */
 	else if( (board[0][2] === board[1][1]) && (board[1][1] === board[2][0]) && (board[2][0] === 2) )
 	{
-		var line = document.getElementById('210');
-		line.x2.baseVal.value += 300;
-		line.y2.baseVal.value -= 300;
+		let line = document.getElementById('210');
+		line.x2.baseVal.value -= 300;
+		line.y2.baseVal.value += 300;
 		return true;
 	}
 
-	for (var i = 0; i < 3; i++)
+	for (let i = 0; i < 3; i++)
 	{
+
 		if ( (board[i][0] === board[i][1]) && (board[i][1] === board[i][2]) && (board[i][2] === 2) )
 		{
-			var line = document.getElementById(i+'012');
+			let line = document.getElementById(i+'012');
 			line.x2.baseVal.value += 300;
-			return true;;
+			return true;
 		}
 
 		else if( (board[0][i] === board[1][i]) && (board[1][i] === board[2][i]) && (board[1][i] === 2) )
 		{
-			var line = document.getElementById('012'+i);
+			let line = document.getElementById('012'+i);
 			line.y2.baseVal.value += 300;
-			return true;;
+			return true;
 		}
 
 	}
@@ -127,7 +129,7 @@ board =
 var colors = getCookie('colors');
 var level  = getCookie('level');
 var marks  = getCookie('marks');
-var user   = (getCookie('user') === 'true') ? true : false;
+var user   = (getCookie('user') === 'true');
 var game   = true; 
 /*	-------	*/
 
