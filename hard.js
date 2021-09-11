@@ -166,13 +166,13 @@ self.onmessage = function(e)
 	// console.log(possibleStates);
 	var options = []; // it will hold max values 
 
-	for (var i = 0; i < possibleStates.length; i++)
+	for (let i = 0; i < possibleStates.length; i++)
 	{
 		options[i] = Max(possibleStates[i]);
 	}
 
 	var maxChoice = 0;
-	for (var i = maxChoice+1; i < options.length; i++)
+	for (let i = maxChoice+1; i < options.length; i++)
 	{
 		if (options[i] > options[maxChoice]) {	maxChoice = i;	}
 	}
