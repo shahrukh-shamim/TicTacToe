@@ -42,7 +42,7 @@ function isLoss(state)
 
 	for (var i = 0; i < 3; i++)
 	{
-		if ( (state[0][i] === state[1][i] ) && ( state[1][i] === state[2][i]) && (state[i][2] === 1 ) ) { return true; }
+		if ( (state[0][i] === state[1][i] ) && ( state[1][i] === state[2][i]) && (state[0][i] === 1 ) ) { return true; }
 	}
 
 	if ( (state[0][0] === state[1][1] ) && ( state[1][1] === state[2][2]) && (state[2][2] === 1 ) ) { return true; }
@@ -61,7 +61,7 @@ function isWin(state)
 
 	for (var i = 0; i < 3; i++)
 	{
-		if ( (state[0][i] === state[1][i] ) && ( state[1][i] === state[2][i]) && (state[i][2] === 2 ) ) { return true; }
+		if ( (state[0][i] === state[1][i] ) && ( state[1][i] === state[2][i]) && (state[0][i] === 2 ) ) { return true; }
 	}
 
 	if ( (state[0][0] === state[1][1] ) && ( state[1][1] === state[2][2]) && (state[2][2] === 2 ) ) { return true; }
@@ -89,7 +89,8 @@ function isDraw(state)
 
 function Min(state)
 {
-	if 		(isWin(state))	{   return 1;	}
+	if (isWin(state)) { return 1; }
+    if (isLoss(state)) { return -1; }
 
 	else if (isDraw(state)) {	return 0;	}
 
@@ -109,7 +110,8 @@ function Min(state)
 
 function Max(state)
 {	
-	if 		(isLoss(state))	{   return -1;	}
+	if (isLoss(state)) { return -1; }
+    if (isWin(state)) { return 1; }
 
 	else if (isDraw(state)) {	return 0;	}
 
@@ -162,6 +164,7 @@ function getStates(state, turn)
 
 self.onmessage = function(e)
 {
+	if (isWin(e.data) || isLoss(e.data) || isDraw(e.data)) { self.postMessage(null); return; }
 	var possibleStates = getStates(e.data, 2);
 	// console.log(possibleStates);
 	var options = []; // it will hold max values 

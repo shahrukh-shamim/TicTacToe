@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Tic Tac Toe</title>
 	<link rel="stylesheet" type="text/css" href="svg.css">
-	<script type="text/javascript" src="contentHandle.js"></script>
 </head>
 <body id="body">
 <svg id='mySVG' viewBox='0 0 600 600'>
@@ -85,43 +85,7 @@
 	createTicTacToe();
 </script>
 
-<script type="text/javascript">
 
-function changeGeometry()
-{
-	var svg  = document.getElementById('mySVG');
-	var body = document.getElementById('body');
-
-	var width = body.offsetWidth = screen.width;
-	var mar = width/3.4285714285714284;
-	svg.style.marginLeft = mar;
-
-	var widthRatio = 2.4;
-	var heightRatio = 1.5;
-
-	var screenWidth = screen.width;
-	var screenHeight = screen.height;
-
-	svg.style.width = (screenWidth/widthRatio);
-	svg.style.height = (screenHeight/heightRatio);
-
-}
-
-var addEvent = function(object, type, callback)
-{
-    if (object == null || typeof(object) == 'undefined') return;
-    if (object.addEventListener) {
-        object.addEventListener(type, callback, false);
-    } else if (object.attachEvent) {
-        object.attachEvent("on" + type, callback);
-    } else {
-        object["on"+type] = callback;
-    }
-};
-
-addEvent(window, "resize", changeGeometry);
-
-</script>
 
 <script type="text/javascript" src='game.js'></script>
 </body>

@@ -14,19 +14,18 @@ rect = [
 
 function increament()
 {
-	for (var i = 0; i < 9; i++)
-	{
-		rect[i]['x'].baseVal.value += 1;
-		rect[i]['y'].baseVal.value += 1;
-	}
-	
-	if ((rect[8]['x'].baseVal.value < 350) && (rect[8]['y'].baseVal.value < 350))
-	{
-		setTimeout(increament, 1);
-	}
-
-	else
-		ready = true; // The game is fully loaded, now the game can proceed
+    var complete = true;
+    for (var i = 0; i < rect.length; i++)
+    {
+        var targetX = 150 + (i % 3) * 100;
+        var targetY = 150 + Math.floor(i / 3) * 100;
+        rect[i].x.baseVal.value = Math.min(targetX, rect[i].x.baseVal.value + 1);
+        rect[i].y.baseVal.value = Math.min(targetY, rect[i].y.baseVal.value + 1);
+        if (rect[i].x.baseVal.value !== targetX || rect[i].y.baseVal.value !== targetY)
+            complete = false;
+    }
+    ready = complete;
+    if (!complete) setTimeout(increament, 1);
 }
 
 function createTicTacToe()
