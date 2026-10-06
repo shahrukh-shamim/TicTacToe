@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Tic Tac Toe</title>
 	<link rel="stylesheet" type="text/css" href="svg.css">
+	<link rel="stylesheet" href="dialogs.css">
 </head>
 <body id="body">
 <svg id='mySVG' viewBox='0 0 600 600'>
@@ -82,11 +83,13 @@
 <div class="game-controls">
 	<button type="button" id="resign">Resign</button>
 </div>
-<dialog id="resign-confirmation" aria-labelledby="resign-title">
+<dialog id="resign-confirmation" class="result-card" aria-labelledby="resign-title">
+	<p class="result-label">LEAVE THIS ROUND?</p>
+	<div class="result-icon" aria-hidden="true">🏳️</div>
 	<h2 id="resign-title">Are you sure you want to resign?</h2>
 	<div class="dialog-actions">
-		<button type="button" id="cancel-resign" autofocus>Cancel</button>
 		<button type="button" id="confirm-resign">Yes, resign</button>
+		<button type="button" id="cancel-resign" class="secondary-action" autofocus>Cancel</button>
 	</div>
 </dialog>
 <dialog id="game-result" class="result-card" aria-labelledby="result-title" aria-describedby="result-message">
@@ -94,7 +97,7 @@
 	<p class="result-label">ROUND COMPLETE</p>
 	<div id="result-icon" class="result-icon" aria-hidden="true"></div>
 	<h2 id="result-title"></h2>
-	<p id="result-message"></p>
+	<p id="result-message" class="result-message"></p>
 	<button type="button" id="play-again" autofocus>Play another game <span aria-hidden="true">↻</span></button>
 	<button type="button" id="return-menu" class="secondary-action">Return to main menu <span aria-hidden="true">→</span></button>
 </dialog>
