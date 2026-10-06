@@ -252,4 +252,10 @@ controller.onmessage = function(event)
     }
 };
 
-if (!user) controller.postMessage(board);
+if (!user)
+{
+    if (ready) controller.postMessage(board);
+    else document.addEventListener('board-ready', function() {
+        controller.postMessage(board);
+    }, { once: true });
+}

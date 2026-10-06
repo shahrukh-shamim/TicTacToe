@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Tic Tac Toe</title>
 	<link rel="stylesheet" href="index.css">
 	<script type="text/javascript">
@@ -14,7 +15,16 @@
 <body>
 	<div><h1>Tic Tac Toe</h1></div>
 	<div class="button-panel">
-		<a href="game.html">PLAY</a><a href="#">HIGHSCORES</a><a href="settings.html">SETTINGS</a><a href="#">ABOUT</a><a href="#">EXIT</a>
+		<button type="button" id="play">PLAY</button><a href="#">HIGHSCORES</a><a href="settings.html">SETTINGS</a><a href="#">ABOUT</a><a href="#">EXIT</a>
 	</div>
+	<dialog id="first-turn" aria-labelledby="first-turn-title">
+		<h2 id="first-turn-title">Who goes first?</h2>
+		<div class="turn-options">
+			<button type="button" id="you-first" autofocus>You first</button>
+			<button type="button" id="computer-first">Computer first</button>
+		</div>
+		<form method="dialog"><button type="submit" class="cancel">Cancel</button></form>
+	</dialog>
+	<script src="menu.js"></script>
 </body>
 </html>

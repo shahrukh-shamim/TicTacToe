@@ -26,6 +26,7 @@ function increament()
     }
     ready = complete;
     if (!complete) setTimeout(increament, 1);
+    else document.dispatchEvent(new Event('board-ready'));
 }
 
 function createTicTacToe()
