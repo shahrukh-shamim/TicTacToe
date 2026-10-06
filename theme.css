@@ -1,0 +1,98 @@
+@font-face {
+    font-family: Inter;
+    src: url("assets/InterVariable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    color-scheme: dark;
+    --color-bg: #0D1117;
+    --color-surface: #171F2B;
+    --color-border: #293444;
+    --color-primary: #45D5E8;
+    --color-secondary: #FF7B82;
+    --color-x: var(--color-primary);
+    --color-o: var(--color-secondary);
+    --color-text: #F3F6FC;
+    --color-muted: #98A5B8;
+    --color-on-accent: #0D1117;
+    --radius-card: 16px;
+    --space-page: clamp(24px, 5vw, 28px);
+    --space-gap: 14px;
+    --font-ui: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: var(--color-bg);
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    color: var(--color-text);
+    font-family: var(--font-ui);
+    background: radial-gradient(ellipse at 50% 0%, #45d5e80a, transparent 65%), var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button:disabled {
+    cursor: default;
+    opacity: 0.45;
+}
+
+:where(button, a):focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 4px;
+}
+
+h1, h2, p {
+    margin-top: 0;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.mark-x {
+    color: var(--color-x);
+}
+
+.mark-o {
+    color: var(--color-o);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

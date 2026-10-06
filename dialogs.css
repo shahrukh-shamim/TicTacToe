@@ -1,0 +1,152 @@
+/* Shared dark popup component used on both pages. */
+dialog {
+    width: 420px;
+    max-width: calc(100vw - 48px);
+    max-height: calc(100vh - 48px);
+    max-height: calc(100dvh - 48px);
+    padding: 28px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+    color: var(--color-text);
+    text-align: center;
+}
+
+dialog::backdrop {
+    background: #060a10b8;
+    backdrop-filter: blur(6px);
+}
+
+.result-card {
+    --accent: var(--color-primary);
+    overflow: auto;
+    background: radial-gradient(ellipse at 0% 0%, #45d5e810, transparent 65%), radial-gradient(ellipse at 100% 100%, #ff7b820d, transparent 65%), var(--color-surface);
+    box-shadow: 0 24px 80px #00000066;
+}
+
+.result-card[open] {
+    animation: result-arrive 240ms ease-out;
+}
+
+.result-card[data-outcome="loss"], .result-card[data-outcome="resign"] {
+    --accent: var(--color-secondary);
+}
+
+.result-label {
+    margin: 16px 0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+}
+
+.result-icon {
+    display: grid;
+    place-items: center;
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: #0d111766;
+    font-size: 40px;
+}
+
+.result-card h2 {
+    margin-bottom: 12px;
+    font-size: clamp(24px, 6vw, 30px);
+    letter-spacing: -1px;
+}
+
+.result-message {
+    margin: 0 auto 24px;
+    max-width: 30ch;
+    color: var(--color-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.result-card button {
+    width: 100%;
+    min-height: 48px;
+    padding: 14px 16px;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-card);
+    background: var(--accent);
+    color: var(--color-on-accent);
+    font-weight: 650;
+    transition: transform 150ms ease, filter 150ms ease;
+}
+
+.result-card button:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.result-card .secondary-action {
+    margin-top: 12px;
+    border-color: var(--color-border);
+    background: transparent;
+    color: var(--color-muted);
+}
+
+.result-sparkles {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--color-x);
+    font-size: 20px;
+}
+
+.result-sparkles span:nth-child(2) {
+    color: var(--color-o);
+    font-size: 10px;
+}
+
+.result-sparkles span:nth-child(3) {
+    color: var(--color-muted);
+}
+
+.result-sparkles span:nth-child(4) {
+    color: var(--color-o);
+    font-size: 14px;
+}
+
+.turn-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.first-turn-card #computer-first {
+    border-color: var(--color-secondary);
+    background: var(--color-secondary);
+}
+
+.dialog-actions .secondary-action {
+    margin-top: 0;
+}
+
+@keyframes result-arrive {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.result-icon .icon {
+    width: 40px;
+    height: 40px;
+    color: var(--accent);
+}
+
+.turn-options button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

@@ -1,125 +1,179 @@
-*
-{
-    padding: 0;
+/* Settings-specific layout; cards and colors come from the shared theme. */
+.settings-shell {
+    padding-block: 32px;
+}
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.settings-header h1 {
     margin: 0;
+    font-size: clamp(30px, 8vw, 38px);
+    font-weight: 800;
+    letter-spacing: -1.2px;
 }
-html
-{
-    height: 100%; 
+
+.back-button {
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    color: var(--color-muted);
+}
+
+.settings-stack {
+    display: grid;
+    gap: var(--space-gap);
+}
+
+.settings-card {
+    min-width: 0;
+    margin: 0;
+    padding: 20px;
+}
+
+.settings-card h2 {
+    margin: 0 0 16px;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+}
+
+.settings-options {
     display: flex;
-    flex-direction: column;
-    align-content: center;
-}
-body
-{
-    font-family: Comic Sans MS, Comic Sans, cursive;
-    width: 50%;
-    margin: auto;
-    margin-left: 25%;
-    margin-right: 25%;
-    text-align: center;
+    gap: 10px;
 }
 
-.divider:nth-child(1)
-{
-    border-top: 2px solid grey;
-}
-/* For Symbols */
-
-#symbols
-{
-    justify-content: center;
-    margin-bottom: 10px;
-    border-bottom: 2px solid grey;
+.option {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    cursor: pointer;
 }
 
-#symbols img
-{
-    width: 30px;
-    height: 30px;
+.option input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
 }
 
-#symbols p
-{
-    text-align: center;
-}
-
-#symbols h3
-{
-    text-align: center;
-}
-
-/* For Colors */
-
-#colors
-{
+.option-face {
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
-    padding: 10px 0 10px 0;
-    border-bottom: 2px solid grey;
+    min-height: 48px;
+    padding: 12px 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-bg);
+    color: var(--color-muted);
+    font-size: 14px;
+    font-weight: 650;
+    transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
 
-#colors div
-{
-    width: 20px;
-    height: 20px;
+.option:hover input:not(:disabled) + .option-face {
+    border-color: var(--color-muted);
 }
 
-#colors div#pink
-{
-    background: rgb(255,0,255);
-    transition: 0.5s linear;
+.option input:checked + .option-face {
+    border-color: var(--color-primary);
+    background: #45d5e814;
+    color: var(--color-text);
+    box-shadow: inset 0 0 0 1px #45D5E8, 0 0 16px #45d5e80c;
 }
 
-#colors div#green
-{
-    background: green;
-    transition: 0.5s linear;
+.option input:focus-visible + .option-face {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 4px;
 }
 
-#colors div#white
-{
-    background: white;
+.symbol-options .option-face {
+    min-height: 84px;
 }
 
-/* For difficulty */
-
-#difficulty
-{
-    margin-bottom: 10px;
-    border-bottom: 2px solid grey;
+.symbol-preview {
+    width: 56px;
+    height: 56px;
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
 }
 
-#difficulty div
-{
-    border-radius: 5%;
+.symbol-o { stroke: var(--color-o); }
+.symbol-x { stroke: var(--color-x); }
+
+.color-options {
+    justify-content: center;
+    gap: 16px;
 }
 
-/* For First turn */
-
-.ft
-{
-    font-size: 16px;
-    border-bottom: 2px solid grey;
+.color-options .option {
+    flex: 0 0 68px;
 }
 
-#pc
-{
-    transition: 0.5s linear;
+.color-options .option-face {
+    height: 68px;
+    padding: 9px;
 }
 
-#_1p1
-{
-    transition: 0.5s linear;
+.color-swatch {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
 }
 
-#_1p2
-{
-    transition: 0.5s linear;
+.color-swatch--cyan { background: var(--color-primary); }
+.color-swatch--coral { background: var(--color-secondary); }
+
+.segmented-control {
+    gap: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-bg);
 }
 
-#_2p2
-{
-    transition: 0.5s linear;
+.segmented-control .option-face {
+    margin: -1px;
+    border-color: transparent;
+    background: transparent;
+}
+
+.settings-card:disabled .option {
+    cursor: default;
+}
+
+.settings-card:disabled .option-face {
+    opacity: 0.5;
+}
+
+.settings-note, .save-status {
+    margin: 12px 0 0;
+    color: var(--color-muted);
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.save-status {
+    margin-top: 28px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+@media (max-width: 350px) {
+    .settings-card { padding: 16px; }
+    .option-face { padding-inline: 4px; font-size: 13px; }
 }

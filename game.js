@@ -78,8 +78,8 @@ function isLoss() // For computer wins
 	else if( (board[0][2] === board[1][1]) && (board[1][1] === board[2][0]) && (board[2][0] === 2) )
 	{
 		var line = document.getElementById('210');
-		line.x2.baseVal.value += 300;
-		line.y2.baseVal.value -= 300;
+		line.x2.baseVal.value = 150;
+		line.y2.baseVal.value = 450;
 		return true;
 	}
 
@@ -127,8 +127,8 @@ board =
 var colors = getCookie('colors');
 var level  = getCookie('level');
 var marks  = getCookie('marks');
-var user   = (getCookie('user') === 'true') ? true : false;
-var game   = true; 
+var user   = getCookie('user') !== 'false';
+var game   = true;
 /*	-------	*/
 
 /*These symbols are configured below*/
@@ -150,134 +150,81 @@ else
 }
 /*	-------	*/
 
+// Keep the legend in sync with the configured symbols.
+var yourSymbol = document.getElementById('your-symbol');
+var computerSymbol = document.getElementById('computer-symbol');
+yourSymbol.textContent = userMark === 1 ? '×' : '○';
+yourSymbol.className = userMark === 1 ? 'mark-x' : 'mark-o';
+computerSymbol.textContent = userMark === 1 ? '○' : '×';
+computerSymbol.className = userMark === 1 ? 'mark-o' : 'mark-x';
+
 /*A recursive function to mark a move animately (for both computer and user)*/
 
-function marking(symbol, symbolObject)
+function marking(symbol, symbolObject, onComplete, width)
 {
-
-	if (symbol === 0)
-	{
-		symbolObject.style.strokeWidth++;
-	}
-	else
-	{
-		symbolObject[0].style.strokeWidth++;
-		symbolObject[1].style.strokeWidth++;
-	}
-
-	if ((symbol === 0) && (symbolObject.style.strokeWidth != 10))
-	{
-		setTimeout(function(){	marking(symbol, symbolObject);	} , 50);
-	}
-
-	else if ((symbol === 1) && (symbolObject[0].style.strokeWidth != 10))
-	{
-		setTimeout(function(){	marking(symbol, symbolObject);	} , 50);
-	}
-
-	else
-	{
-		user = !user; // Switch The Turn
-	}
+    width = (width || 0) + 1;
+    var parts = symbol === 0 ? [symbolObject] : Array.from(symbolObject);
+    parts.forEach(function(part) { part.style.strokeWidth = String(width); });
+    if (width < 10)
+        setTimeout(function() { marking(symbol, symbolObject, onComplete, width); }, 50);
+    else if (onComplete)
+        onComplete();
 }
 /*	-------	*/
 
 /*A function to mark a circle*/
 
-function markCircle(id)
+function markCircle(id, onComplete)
 {
 	var ci = document.getElementById('c'+id) // circle object
-	marking(0, ci);
+	marking(0, ci, onComplete);
 }
 /*	-------	*/
 
-function markCross(CrossClass)
+function markCross(CrossClass, onComplete)
 {
 	var cr = document.getElementsByClassName(CrossClass) // cross object
-	marking(1, cr);  
+	marking(1, cr, onComplete);
 }
 /*	-------	*/
 
 /*Assigning a event listener to all rectangles*/
 
+function finishTurn(player)
+{
+    if (!game) return true;
+    if (player === 1 ? isWin() : isLoss())
+    {
+        endGame(player === 1 ? 'win' : 'loss');
+        return true;
+    }
+    if (board.every(function(row) {
+        return row.every(function(cell) { return cell !== 0; });
+    }))
+    {
+        endGame('draw');
+        return true;
+    }
+    return false;
+}
+
 var rects = document.getElementsByClassName('rects');
 for (var i = 0; i < rects.length; i++)
 {
-	rects[i].addEventListener('click', function()
-	{
-		/*
-		'this.dataset.occupied' is actually a custom attribute 'occupied'
-		attached to each rectangle and it indicates if a rect is filled or
-		not. Variable "ready" is declared in animation.js and used at line 2 and 30
-		*/
-
-		if((ready) && (this.dataset.occupied === 'false') && (user === true) && (game))
-		{
-			this.dataset.occupied = true;
-			switch (this.id.substr(4,1))
-			{
-				case '1':
-					(userMark === 0) ? markCircle(this.id.substr(4,1)) : markCross(this.id.substr(4,1));
-					board[0][0] = 1;
-					if (!isWin())
-						controller.postMessage(board);
-					break;
-				case '2':
-					(userMark === 0) ? markCircle(this.id.substr(4,1)) : markCross(this.id.substr(4,1));
-					board[0][1] = 1;
-					if (!isWin())
-						controller.postMessage(board);
-					break;
-				case '3':
-					(userMark === 0) ? markCircle(this.id.substr(4,1)) : markCross(this.id.substr(4,1));
-					board[0][2] = 1;
-					if (!isWin())
-						controller.postMessage(board);
-					break;
-				case '4':
-					(userMark === 0) ? markCircle(this.id.substr(4,1)) : markCross(this.id.substr(4,1));
-					board[1][0] = 1;
-					if (!isWin())
-						controller.postMessage(board);
-					break;
-				case '5':
-					(userMark === 0) ? markCircle(this.id.substr(4,1)) : markCross(this.id.substr(4,1));
-					board[1][1] = 1;
-					if (!isWin())
-						controller.postMessage(board);
-					break;
-				case '6':
-					(userMark === 0) ? markCircle(this.id.substr(4,1)) : markCross(this.id.substr(4,1));
-					board[1][2] = 1;
-					if (!isWin())
-						controller.postMessage(board);
-					break;
-				case '7':
-					(userMark === 0) ? markCircle(this.id.substr(4,1)) : markCross(this.id.substr(4,1));
-					board[2][0] = 1;
-					if (!isWin())
-						controller.postMessage(board);
-					break;
-				case '8':
-					(userMark === 0) ? markCircle(this.id.substr(4,1)) : markCross(this.id.substr(4,1));
-					board[2][1] = 1;
-					if (!isWin())
-						controller.postMessage(board);
-					break;
-				case '9':
-					(userMark === 0) ? markCircle(this.id.substr(4,1)) : markCross(this.id.substr(4,1));
-					board[2][2] = 1;
-					if (!isWin())
-						controller.postMessage(board);
-					break;
-				default:
-					break;
-			}
-		}
-	}
-	);
+    rects[i].addEventListener('click', function()
+    {
+        if (!ready || !user || !game || this.dataset.occupied !== 'false') return;
+        user = false;
+        var id = Number(this.id.slice(4));
+        this.dataset.occupied = 'true';
+        board[Math.floor((id - 1) / 3)][(id - 1) % 3] = 1;
+        var complete = function() {
+            if (!finishTurn(1)) controller.postMessage(board);
+        };
+        if (userMark === 0) markCircle(id, complete);
+        else markCross(String(id), complete);
+    });
 }
-/*	-------	*/
 
 switch (level)
 {
@@ -296,39 +243,32 @@ switch (level)
 }
 /*	-------	*/
 
-if (user === true)
-{
-	//
-}
-
-else
-{
-	//while(!ready);
-	controller.postMessage(board);
-}
-
 controller.onmessage = function(event)
 {
-	var data = event.data;
-	loop1:
-	for (var i = 0, rectangle = 1; i < 3; i++)
-	{
-		for (var j = 0; j < 3; j++)
-		{
-			if (board[i][j] !== data[i][j])
-			{
-				board[i][j] = 2;
+    if (!game || !event.data) return;
+    var data = event.data;
+    for (var i = 0; i < 3; i++)
+    {
+        for (var j = 0; j < 3; j++)
+        {
+            if (board[i][j] === 0 && data[i][j] === 2)
+            {
+                board[i][j] = 2;
+                var id = i * 3 + j + 1;
+                rect[id - 1].dataset.occupied = 'true';
+                var complete = function() { if (!finishTurn(2)) user = true; };
+                if (userMark === 0) markCross(String(id), complete);
+                else markCircle(id, complete);
+                return;
+            }
+        }
+    }
+};
 
-				//var rectTemp = document.getElementById('rect'+rectangle);
-				var rectTemp = rect[rectangle-1]; // rect array exist in animation.js. It contains all rectangle objects
-
-				rectTemp.dataset.occupied = true;
-				(userMark === 0) ? markCross(rectangle) :  markCircle(rectangle) ;
-				if (isLoss())
-						game = false;
-				break loop1;
-			}
-			rectangle++;
-		}
-	}
+if (!user)
+{
+    if (ready) controller.postMessage(board);
+    else document.addEventListener('board-ready', function() {
+        if (game) controller.postMessage(board);
+    }, { once: true });
 }

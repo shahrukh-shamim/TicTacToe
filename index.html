@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Tic Tac Toe</title>
+	<link rel="stylesheet" href="theme.css">
+	<link rel="stylesheet" href="components.css">
 	<link rel="stylesheet" href="index.css">
-	<script type="text/javascript">
-		document.cookie = "user=true";
-		document.cookie = "level=3";
-		document.cookie = "marks=01";
-		document.cookie = "colors=gb";
-	</script>
+	<link rel="stylesheet" href="dialogs.css">
+	<script src="preferences.js"></script>
 </head>
 <body>
-	<div><h1>Tic Tac Toe</h1></div>
-	<div class="button-panel">
-		<a href="game.html">PLAY</a><a href="#">HIGHSCORES</a><a href="settings.html">SETTINGS</a><a href="#">ABOUT</a><a href="#">EXIT</a>
-	</div>
+	<main class="app-shell menu-shell">
+        <header class="menu-header">
+            <svg class="brand-board" viewBox="0 0 180 180" aria-hidden="true"><use href="assets/icons.svg#board"/></svg>
+            <h1>Tic Tac Toe</h1>
+            <p>Your next move starts here</p>
+        </header>
+        <nav aria-label="Main menu">
+            <button type="button" id="play" class="button button--primary menu-play"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#play"/></svg>Play</button>
+            <div class="menu-grid">
+                <button type="button" id="play-online" class="card menu-card"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#online"/></svg><span>Play online</span></button>
+                <a class="card menu-card" href="settings.html"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#settings"/></svg><span>Settings</span></a>
+                <a class="card menu-card" href="#"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#info"/></svg><span>About</span></a>
+                <a class="card menu-card" href="#"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#exit"/></svg><span>Exit</span></a>
+            </div>
+        </nav>
+    </main>
+    <dialog id="online-coming-soon" class="result-card" aria-labelledby="online-coming-soon-title">
+        <p class="result-label">PLAY ONLINE</p>
+        <div class="result-icon" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#online"/></svg></div>
+        <h2 id="online-coming-soon-title">Coming soon, really soon</h2>
+        <form method="dialog"><button type="submit" autofocus>Got it</button></form>
+    </dialog>
+	<script src="menu.js"></script>
 </body>
 </html>

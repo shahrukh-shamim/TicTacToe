@@ -1,68 +1,155 @@
-html
-{
-	display: flex;
-	align-items: center;
-	height: 100%;
-	justify-content: center;
-	
-}
-#body
-{
-	margin: 0;
-	padding: 0;
-	border: 0;
-	width: 95%;
-	height: 80%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+/* The game stays centered independently of its header and controls. */
+.game-stage {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 100px var(--space-page);
 }
 
-#mySVG
-{
-	height: 100%;
-	width: 100%;
+#mySVG {
+    display: block;
+    width: min(480px, calc(100vw - 48px), calc(100vh - 200px));
+    width: min(480px, calc(100vw - 48px), calc(100dvh - 200px));
+    height: auto;
+    aspect-ratio: 1;
+    overflow: hidden;
 }
 
-#rect1
-{
-	stroke-dasharray: 0, 100;
+#mySVG circle {
+    stroke: var(--color-o);
+    fill: none;
+    pointer-events: none;
 }
 
-#rect2
-{
-	stroke-dasharray: 0, 100, 300;
+#mySVG line[class] {
+    stroke: var(--color-x);
+    stroke-linecap: round;
+    pointer-events: none;
 }
 
-#rect3
-{
-	stroke-dasharray: 0, 200, 200;
+#mySVG .rects {
+    stroke: var(--color-border);
+    fill: transparent;
+    fill-opacity: 1;
+    cursor: pointer;
 }
 
-#rect4
-{
-	stroke-dasharray: 300 , 100;
+#mySVG line[id] {
+    stroke: var(--color-text);
+    stroke-linecap: butt;
+    pointer-events: none;
 }
 
-#rect5
-{}
-
-#rect6
-{
-	stroke-dasharray: 100,100,200;
+.game-header {
+    position: absolute;
+    top: 28px;
+    left: var(--space-page);
+    right: var(--space-page);
+    text-align: center;
 }
 
-#rect7
-{
-	stroke-dasharray: 200, 200;
+.game-header .eyebrow {
+    margin-bottom: 12px;
 }
 
-#rect8
-{
-	stroke-dasharray: 200, 100;
+.player-legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    font-size: 14px;
 }
 
-#rect9
-{
-	stroke-dasharray: 100,200,200;
+.player-legend > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.player-legend b {
+    font-size: 26px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.legend-divider {
+    color: var(--color-muted);
+    font-size: 11px;
+}
+
+.game-controls {
+    position: fixed;
+    bottom: max(24px, env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.game-controls .button {
+    color: var(--color-muted);
+}
+
+.game-controls .icon {
+    width: 18px;
+    height: 18px;
+}
+
+.dialog-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@media (max-height: 420px) {
+    .game-header {
+        top: 14px;
+    }
+    .game-header .eyebrow {
+        display: none;
+    }
+    .game-stage {
+        padding-block: 64px;
+    }
+    #mySVG {
+        width: min(480px, calc(100vw - 48px), calc(100vh - 128px));
+        width: min(480px, calc(100vw - 48px), calc(100dvh - 128px));
+    }
+    .game-controls {
+        bottom: 12px;
+    }
+}
+
+#rect1 {
+    stroke-dasharray: 0, 100;
+}
+
+#rect2 {
+    stroke-dasharray: 0, 100, 300;
+}
+
+#rect3 {
+    stroke-dasharray: 0, 200, 200;
+}
+
+#rect4 {
+    stroke-dasharray: 300 , 100;
+}
+
+#rect5 {
+}
+
+#rect6 {
+    stroke-dasharray: 100,100,200;
+}
+
+#rect7 {
+    stroke-dasharray: 200, 200;
+}
+
+#rect8 {
+    stroke-dasharray: 200, 100;
+}
+
+#rect9 {
+    stroke-dasharray: 100,200,200;
 }
