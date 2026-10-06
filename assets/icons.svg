@@ -12,6 +12,7 @@
 <symbol id="sparkle" viewBox="0 0 24 24"><path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/></symbol>
 <symbol id="board" viewBox="0 0 180 180">
 <path d="M60 8v164M120 8v164M8 60h164M8 120h164" stroke="var(--color-border, #293444)" stroke-width="4" stroke-linecap="round"/>
-<g stroke="var(--color-x, #45D5E8)" stroke-width="7" stroke-linecap="round"><path d="m18 18 24 24m0-24L18 42m120-24 24 24m0-24-24 24M78 78l24 24m0-24-24 24m-60 36 24 24m0-24-24 24m120-24 24 24m0-24-24 24"/></g>
-<g fill="none" stroke="var(--color-o, #FF7B82)" stroke-width="7"><circle cx="90" cy="30" r="16"/><circle cx="30" cy="90" r="16"/><circle cx="150" cy="90" r="16"/><circle cx="90" cy="150" r="16"/></g>
+<g stroke="var(--color-x, #45D5E8)" stroke-width="7" stroke-linecap="round"><path d="m138 18 24 24m0-24-24 24M78 78l24 24m0-24-24 24m-60 36 24 24m0-24-24 24m120-24 24 24m0-24-24 24"/></g>
+<g fill="none" stroke="var(--color-o, #FF7B82)" stroke-width="7"><circle cx="90" cy="30" r="16"/><circle cx="30" cy="90" r="16"/><circle cx="150" cy="90" r="16"/></g>
+<path d="M168 12 12 168" fill="none" stroke="var(--color-text, #F3F6FC)" stroke-width="3" stroke-linecap="round"/>
 </symbol></svg>
