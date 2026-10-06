@@ -11,8 +11,10 @@
     --color-bg: #0D1117;
     --color-surface: #171F2B;
     --color-border: #293444;
-    --color-x: #45D5E8;
-    --color-o: #FF7B82;
+    --color-primary: #45D5E8;
+    --color-secondary: #FF7B82;
+    --color-x: var(--color-primary);
+    --color-o: var(--color-secondary);
     --color-text: #F3F6FC;
     --color-muted: #98A5B8;
     --color-on-accent: #0D1117;
@@ -61,7 +63,7 @@ button:disabled {
 }
 
 :where(button, a):focus-visible {
-    outline: 3px solid var(--color-x);
+    outline: 3px solid var(--color-primary);
     outline-offset: 4px;
 }
 

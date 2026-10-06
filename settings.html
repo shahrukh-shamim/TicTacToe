@@ -1,53 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>SETTINGS</title>
-	<link rel="stylesheet" href="settings.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Settings · Tic Tac Toe</title>
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="settings.css">
+    <script src="preferences.js"></script>
 </head>
 <body>
-	<h1>Settings</h1><br>
-	<div class='divider'>
-		<h2>Symbols</h2>
-		<div id="symbols">
-			<p><img src="circle.bmp" > <img src="cross.bmp" alt="a"></p>
-		</div>
-	</div>
-
-	<div class='divider'>
-		<h2>Colors</h2>
-		<div id="colors">
-			<div id="pink"></div>
-			<div id="white"></div>
-			<div id="green"></div>
-		</div>
-	</div>
-
-	<div class='divider'>
-		<h2>Difficulty</h2>
-		<div id="difficulty">
-			<div style="color: rgb(0,255,0)" id='easy'>Easy</div>
-			<div style="color: rgb(0,0,255)" id='medium'>Medium</div>
-			<div style="color: rgb(255,0,0)" id='hard'>Hard</div>
-		</div>
-	</div>
-
-	<div class='divider'>
-		<h2>1P First Turn</h2>
-		<div class="ft">
-			<div style="color: rgb(255,0,255)" onclick="document.cookie='user=false';" id="pc">Computer</div>
-			<div style="color: green" onclick="document.cookie='user=true';" id="_1p1">1P</div>
-		</div>
-	</div>
-	
-	<div class='divider'>
-		<h2>2P First Turn</h2>
-		<div class="ft">
-			<div style="color: rgb(255,0,255)" id="_1p2">1P</div>
-			<div style="color: green" id="_2p2">2P</div>
-		</div>
-	</div>
-
-	<script src="settings.js"></script>
+    <main class="app-shell settings-shell">
+        <header class="settings-header">
+            <a href="index.html" class="button button--secondary back-button" aria-label="Back to main menu"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#back"/></svg></a>
+            <h1>Settings</h1>
+        </header>
+        <form id="settings-form" class="settings-stack">
+            <fieldset class="card settings-card">
+                <legend class="visually-hidden">Your symbol</legend>
+                <h2 aria-hidden="true">Symbols</h2>
+                <div class="settings-options symbol-options">
+                    <label class="option">
+                        <input type="radio" name="symbol" value="o" aria-label="Play as O">
+                        <span class="option-face"><svg class="symbol-preview symbol-o" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="20"/></svg></span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="symbol" value="x" aria-label="Play as X">
+                        <span class="option-face"><svg class="symbol-preview symbol-x" viewBox="0 0 64 64" aria-hidden="true"><path d="m14 14 36 36m0-36L14 50"/></svg></span>
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset class="card settings-card">
+                <legend class="visually-hidden">Your mark color</legend>
+                <h2 aria-hidden="true">Colors</h2>
+                <div class="settings-options color-options">
+                    <label class="option"><input type="radio" name="color" value="cyan" aria-label="Cyan marks"><span class="option-face"><span class="color-swatch color-swatch--cyan" aria-hidden="true"></span></span></label>
+                    <label class="option"><input type="radio" name="color" value="coral" aria-label="Coral marks"><span class="option-face"><span class="color-swatch color-swatch--coral" aria-hidden="true"></span></span></label>
+                </div>
+            </fieldset>
+            <fieldset class="card settings-card">
+                <legend class="visually-hidden">Difficulty</legend>
+                <h2 aria-hidden="true">Difficulty</h2>
+                <div class="settings-options segmented-control">
+                    <label class="option"><input type="radio" name="difficulty" value="easy"><span class="option-face">Easy</span></label>
+                    <label class="option"><input type="radio" name="difficulty" value="medium"><span class="option-face">Medium</span></label>
+                    <label class="option"><input type="radio" name="difficulty" value="hard"><span class="option-face">Hard</span></label>
+                </div>
+            </fieldset>
+            <fieldset class="card settings-card">
+                <legend class="visually-hidden">Preferred first turn against the computer</legend>
+                <h2 aria-hidden="true">1P First Turn</h2>
+                <div class="settings-options segmented-control">
+                    <label class="option"><input type="radio" name="firstTurn" value="computer"><span class="option-face">Computer</span></label>
+                    <label class="option"><input type="radio" name="firstTurn" value="you"><span class="option-face">1P</span></label>
+                </div>
+            </fieldset>
+            <fieldset class="card settings-card" disabled aria-describedby="two-player-note">
+                <legend class="visually-hidden">Two-player first turn</legend>
+                <h2 aria-hidden="true">2P First Turn</h2>
+                <div class="settings-options segmented-control">
+                    <label class="option"><input type="radio" name="twoPlayerFirst" value="1" checked><span class="option-face">1P</span></label>
+                    <label class="option"><input type="radio" name="twoPlayerFirst" value="2"><span class="option-face">2P</span></label>
+                </div>
+                <p id="two-player-note" class="settings-note">Two-player mode coming soon</p>
+            </fieldset>
+        </form>
+        <p id="save-status" class="save-status" role="status">Changes saved automatically</p>
+    </main>
+    <script src="settings.js"></script>
 </body>
 </html>

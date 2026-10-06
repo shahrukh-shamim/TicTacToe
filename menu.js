@@ -21,6 +21,10 @@ var startingGame = false;
 
 function chooseFirstPlayer() {
     startingGame = false;
+    var preferred = Preferences.get().firstTurn === 'you' ? 'you-first' : 'computer-first';
+    ['you-first', 'computer-first'].forEach(function(id) {
+        document.getElementById(id).toggleAttribute('autofocus', id === preferred);
+    });
     firstTurnDialog.showModal();
 }
 

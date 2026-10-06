@@ -27,9 +27,9 @@
 }
 
 .button--primary {
-    background: var(--color-x);
+    background: var(--color-primary);
     color: var(--color-on-accent);
-    border-color: var(--color-x);
+    border-color: var(--color-primary);
     box-shadow: 0 4px 22px #45d5e814;
 }
 

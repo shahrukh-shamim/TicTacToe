@@ -18,7 +18,7 @@ dialog::backdrop {
 }
 
 .result-card {
-    --accent: var(--color-x);
+    --accent: var(--color-primary);
     overflow: auto;
     background: radial-gradient(ellipse at 0% 0%, #45d5e810, transparent 65%), radial-gradient(ellipse at 100% 100%, #ff7b820d, transparent 65%), var(--color-surface);
     box-shadow: 0 24px 80px #00000066;
@@ -29,7 +29,7 @@ dialog::backdrop {
 }
 
 .result-card[data-outcome="loss"], .result-card[data-outcome="resign"] {
-    --accent: var(--color-o);
+    --accent: var(--color-secondary);
 }
 
 .result-label {
@@ -119,8 +119,8 @@ dialog::backdrop {
 }
 
 .first-turn-card #computer-first {
-    border-color: var(--color-o);
-    background: var(--color-o);
+    border-color: var(--color-secondary);
+    background: var(--color-secondary);
 }
 
 .dialog-actions .secondary-action {
