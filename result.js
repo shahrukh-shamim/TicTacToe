@@ -29,3 +29,8 @@ resultDialog.addEventListener('cancel', function(event) {
 document.getElementById('return-menu').addEventListener('click', function() {
     window.location.href = 'index.html';
 });
+
+document.getElementById('play-again').addEventListener('click', function() {
+    resultDialog.close();
+    chooseFirstPlayer();
+});

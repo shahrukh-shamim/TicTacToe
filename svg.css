@@ -113,6 +113,19 @@ dialog::backdrop
     gap: 12px;
 }
 
+.turn-options
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+#first-turn .cancel
+{
+    margin-top: 16px;
+}
+
 .result-card
 {
     --accent: #b9ff73;
@@ -206,6 +219,14 @@ dialog::backdrop
 {
     filter: brightness(1.08);
     transform: translateY(-2px);
+}
+
+.result-card .secondary-action
+{
+    margin-top: 12px;
+    border: 1px solid #ffffff55;
+    background: #ffffff0d;
+    color: #fff;
 }
 
 .result-card button:focus-visible
