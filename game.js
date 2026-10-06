@@ -185,13 +185,16 @@ function markCross(CrossClass, onComplete)
 function finishTurn(player)
 {
     if (!game) return true;
-    if ((player === 1 ? isWin() : isLoss()) || board.every(function(row) {
+    if (player === 1 ? isWin() : isLoss())
+    {
+        endGame(player === 1 ? 'win' : 'loss');
+        return true;
+    }
+    if (board.every(function(row) {
         return row.every(function(cell) { return cell !== 0; });
     }))
     {
-        game = false;
-        user = false;
-        document.getElementById('resign').disabled = true;
+        endGame('draw');
         return true;
     }
     return false;

@@ -89,9 +89,13 @@
 		<button type="button" id="confirm-resign">Yes, resign</button>
 	</div>
 </dialog>
-<dialog id="resign-result" aria-labelledby="resign-result-title">
-	<h2 id="resign-result-title">Computer wins 😎</h2>
-	<button type="button" id="return-menu" autofocus>Return to main menu</button>
+<dialog id="game-result" class="result-card" aria-labelledby="result-title" aria-describedby="result-message">
+	<div class="result-sparkles" aria-hidden="true"><span>✦</span><span>●</span><span>✧</span><span>✦</span></div>
+	<p class="result-label">ROUND COMPLETE</p>
+	<div id="result-icon" class="result-icon" aria-hidden="true"></div>
+	<h2 id="result-title"></h2>
+	<p id="result-message"></p>
+	<button type="button" id="return-menu" autofocus>Return to main menu <span aria-hidden="true">→</span></button>
 </dialog>
 <script type="text/javascript" src="animation.js">
 </script>
@@ -101,6 +105,7 @@
 
 
 
+<script src="result.js"></script>
 <script type="text/javascript" src='game.js'></script>
 <script src="resign.js"></script>
 </body>
