@@ -79,6 +79,20 @@
 <line x1="150" y1="150" id='012' x2="150" y2="150"  style="stroke:rgb(255,0,0);stroke-width:5" />
 <line x1="450" y1="150" id='210' x2="450" y2="150"  style="stroke:rgb(255,0,0);stroke-width:5" />
 </svg>
+<div class="game-controls">
+	<button type="button" id="resign">Resign</button>
+</div>
+<dialog id="resign-confirmation" aria-labelledby="resign-title">
+	<h2 id="resign-title">Are you sure you want to resign?</h2>
+	<div class="dialog-actions">
+		<button type="button" id="cancel-resign" autofocus>Cancel</button>
+		<button type="button" id="confirm-resign">Yes, resign</button>
+	</div>
+</dialog>
+<dialog id="resign-result" aria-labelledby="resign-result-title">
+	<h2 id="resign-result-title">Computer wins 😎</h2>
+	<button type="button" id="return-menu" autofocus>Return to main menu</button>
+</dialog>
 <script type="text/javascript" src="animation.js">
 </script>
 <script type="text/javascript">
@@ -88,5 +102,6 @@
 
 
 <script type="text/javascript" src='game.js'></script>
+<script src="resign.js"></script>
 </body>
 </html>

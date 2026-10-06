@@ -184,12 +184,14 @@ function markCross(CrossClass, onComplete)
 
 function finishTurn(player)
 {
+    if (!game) return true;
     if ((player === 1 ? isWin() : isLoss()) || board.every(function(row) {
         return row.every(function(cell) { return cell !== 0; });
     }))
     {
         game = false;
         user = false;
+        document.getElementById('resign').disabled = true;
         return true;
     }
     return false;
@@ -256,6 +258,6 @@ if (!user)
 {
     if (ready) controller.postMessage(board);
     else document.addEventListener('board-ready', function() {
-        controller.postMessage(board);
+        if (game) controller.postMessage(board);
     }, { once: true });
 }

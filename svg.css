@@ -67,3 +67,48 @@ body
 {
 	stroke-dasharray: 100,200,200;
 }
+
+.game-controls
+{
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button
+{
+    min-height: 44px;
+    padding: 10px 18px;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:disabled
+{
+    cursor: default;
+}
+
+dialog
+{
+    box-sizing: border-box;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 32px);
+    border: 1px solid #54660F;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+}
+
+dialog::backdrop
+{
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.dialog-actions
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
