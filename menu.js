@@ -7,12 +7,12 @@ firstTurnDialog.setAttribute('aria-describedby', 'first-turn-message');
 firstTurnDialog.innerHTML = `
     <div class="result-sparkles" aria-hidden="true"><span>✦</span><span>●</span><span>✧</span><span>✦</span></div>
     <p class="result-label">LET’S PLAY</p>
-    <div class="result-icon" aria-hidden="true">🎮</div>
+    <div class="result-icon" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#gamepad"/></svg></div>
     <h2 id="first-turn-title">Who goes first?</h2>
     <p id="first-turn-message" class="result-message">Your move or the computer’s? You decide.</p>
     <div class="turn-options">
-        <button type="button" id="you-first" autofocus><span aria-hidden="true">🙋</span> You first</button>
-        <button type="button" id="computer-first"><span aria-hidden="true">🤖</span> Computer first</button>
+        <button type="button" id="you-first" autofocus><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#user"/></svg> You first</button>
+        <button type="button" id="computer-first"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#robot"/></svg> Computer first</button>
     </div>
     <form method="dialog"><button type="submit" class="cancel secondary-action">Cancel</button></form>
 `;

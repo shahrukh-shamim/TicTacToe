@@ -150,6 +150,14 @@ else
 }
 /*	-------	*/
 
+// Keep the legend in sync with the configured symbols.
+var yourSymbol = document.getElementById('your-symbol');
+var computerSymbol = document.getElementById('computer-symbol');
+yourSymbol.textContent = userMark === 1 ? '×' : '○';
+yourSymbol.className = userMark === 1 ? 'mark-x' : 'mark-o';
+computerSymbol.textContent = userMark === 1 ? '○' : '×';
+computerSymbol.className = userMark === 1 ? 'mark-o' : 'mark-x';
+
 /*A recursive function to mark a move animately (for both computer and user)*/
 
 function marking(symbol, symbolObject, onComplete, width)

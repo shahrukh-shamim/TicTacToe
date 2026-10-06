@@ -1,184 +1,152 @@
-dialog
-{
-    box-sizing: border-box;
-    max-width: calc(100vw - 32px);
-    max-height: calc(100vh - 32px);
-    border: 1px solid #54660F;
-    border-radius: 12px;
-    padding: 24px;
+/* Shared dark popup component used on both pages. */
+dialog {
+    width: 420px;
+    max-width: calc(100vw - 48px);
+    max-height: calc(100vh - 48px);
+    max-height: calc(100dvh - 48px);
+    padding: 28px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+    color: var(--color-text);
     text-align: center;
 }
 
-dialog::backdrop
-{
-    background: rgba(0, 0, 0, 0.4);
-}
-
-.turn-options
-{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-}
-
-dialog button
-{
-    padding: 12px 16px;
-    font: inherit;
-    cursor: pointer;
-}
-
-dialog .cancel
-{
-    margin-top: 16px;
-}
-
-.result-card
-{
-    --accent: #b9ff73;
-    width: 420px;
-    padding: 40px 28px 28px;
-    overflow: auto;
-    border: 1px solid #ffffff55;
-    border-radius: 28px;
-    color: #fff;
-    font-family: system-ui, sans-serif;
-    background:
-        radial-gradient(ellipse at 0% 0%, #ed3fc788, transparent 65%),
-        radial-gradient(ellipse at 100% 100%, #17cbb377, transparent 65%),
-        linear-gradient(135deg, #462a87, #20214e);
-    box-shadow: 0 24px 80px #15103266, inset 0 1px 0 #ffffff33;
-}
-
-.result-card[open]
-{
-    animation: result-arrive 280ms ease-out;
-}
-
-.result-card::backdrop
-{
-    background: #18102c99;
+dialog::backdrop {
+    background: #060a10b8;
     backdrop-filter: blur(6px);
 }
 
-.result-card[data-outcome="loss"],
-.result-card[data-outcome="resign"]
-{
-    --accent: #ffd878;
+.result-card {
+    --accent: var(--color-x);
+    overflow: auto;
+    background: radial-gradient(ellipse at 0% 0%, #45d5e810, transparent 65%), radial-gradient(ellipse at 100% 100%, #ff7b820d, transparent 65%), var(--color-surface);
+    box-shadow: 0 24px 80px #00000066;
 }
 
-.result-card[data-outcome="draw"]
-{
-    --accent: #8cf5ff;
+.result-card[open] {
+    animation: result-arrive 240ms ease-out;
 }
 
-.result-label
-{
-    font-size: 12px;
+.result-card[data-outcome="loss"], .result-card[data-outcome="resign"] {
+    --accent: var(--color-o);
+}
+
+.result-label {
+    margin: 16px 0;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: var(--accent);
 }
 
-.result-icon
-{
+.result-icon {
     display: grid;
     place-items: center;
-    width: 100px;
-    height: 100px;
-    margin: 24px auto;
-    border: 1px solid #ffffff44;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #ffffff33, #ffffff08);
-    box-shadow: 0 8px 30px #00000022;
-    font-size: 52px;
-    transform: rotate(-6deg);
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: #0d111766;
+    font-size: 40px;
 }
 
-.result-card h2
-{
-    margin: 0 0 12px;
-    font-size: clamp(24px, 6vw, 32px);
+.result-card h2 {
+    margin-bottom: 12px;
+    font-size: clamp(24px, 6vw, 30px);
     letter-spacing: -1px;
 }
 
-.result-message
-{
-    margin: 0 auto 28px;
+.result-message {
+    margin: 0 auto 24px;
     max-width: 30ch;
-    color: #eee5ff;
+    color: var(--color-muted);
+    font-size: 14px;
     line-height: 1.6;
 }
 
-.result-card button
-{
+.result-card button {
     width: 100%;
-    border: 0;
-    border-radius: 14px;
-    padding: 16px;
+    min-height: 48px;
+    padding: 14px 16px;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-card);
     background: var(--accent);
-    color: #24213d;
-    font-weight: 700;
+    color: var(--color-on-accent);
+    font-weight: 650;
     transition: transform 150ms ease, filter 150ms ease;
 }
 
-.result-card button:hover
-{
+.result-card button:hover {
     filter: brightness(1.08);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
-.result-card .secondary-action
-{
+.result-card .secondary-action {
     margin-top: 12px;
-    border: 1px solid #ffffff55;
-    background: #ffffff0d;
-    color: #fff;
+    border-color: var(--color-border);
+    background: transparent;
+    color: var(--color-muted);
 }
 
-.result-card button:focus-visible
-{
-    outline: 3px solid white;
-    outline-offset: 4px;
-}
-
-.result-sparkles
-{
+.result-sparkles {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    color: #ffd878;
-    font-size: 24px;
+    color: var(--color-x);
+    font-size: 20px;
 }
 
-.result-sparkles span:nth-child(2) { color: #ff8ad8; font-size: 12px; }
-.result-sparkles span:nth-child(3) { color: #8cf5ff; }
-.result-sparkles span:nth-child(4) { color: #b9ff73; font-size: 16px; }
-
-@keyframes result-arrive
-{
-    from { opacity: 0; transform: translateY(16px) scale(0.96); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+.result-sparkles span:nth-child(2) {
+    color: var(--color-o);
+    font-size: 10px;
 }
 
-@media (prefers-reduced-motion: reduce)
-{
-    .result-card[open] { animation: none; }
-    .result-card button { transition: none; }
+.result-sparkles span:nth-child(3) {
+    color: var(--color-muted);
 }
 
-.first-turn-card .turn-options
-{
+.result-sparkles span:nth-child(4) {
+    color: var(--color-o);
+    font-size: 14px;
+}
+
+.turn-options {
+    display: flex;
     flex-direction: column;
+    gap: 12px;
 }
 
-.first-turn-card #computer-first
-{
-    background: #8cf5ff;
+.first-turn-card #computer-first {
+    border-color: var(--color-o);
+    background: var(--color-o);
 }
 
-.first-turn-card .cancel
-{
-    margin-top: 12px;
+.dialog-actions .secondary-action {
+    margin-top: 0;
+}
+
+@keyframes result-arrive {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.result-icon .icon {
+    width: 40px;
+    height: 40px;
+    color: var(--accent);
+}
+
+.turn-options button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
