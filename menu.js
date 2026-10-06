@@ -31,6 +31,11 @@ function chooseFirstPlayer() {
 var playButton = document.getElementById('play');
 if (playButton) playButton.addEventListener('click', chooseFirstPlayer);
 
+var onlineButton = document.getElementById('play-online');
+if (onlineButton) onlineButton.addEventListener('click', function() {
+    document.getElementById('online-coming-soon').showModal();
+});
+
 function startGame(userFirst) {
     startingGame = true;
     document.cookie = 'user=' + userFirst + '; SameSite=Lax';
