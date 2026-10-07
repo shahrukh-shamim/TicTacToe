@@ -1,0 +1,11 @@
+{
+  "appId": "com.shahrukhshamim.tictactoe",
+  "appName": "Tic Tac Toe",
+  "webDir": "dist",
+  "backgroundColor": "#0D1117",
+  "plugins": {
+    "SystemBars": {
+      "style": "DARK"
+    }
+  }
+}
