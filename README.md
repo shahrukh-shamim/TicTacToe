@@ -9,6 +9,12 @@ It chooses randomly among equally bad moves and opens randomly on an empty board
 Run `npm test` to check its choices against an independent solver across all
 reachable positions, including both starting players.
 
+Normal cycles through target scores 1, 1, 0, -1 on its computer turns, then
+repeats. If the target is unavailable, it chooses the closest score (preferring
+the higher score on a tie), with random choices among equally scored moves.
+An empty-board opening is random and counts as its first turn. The counter
+starts over for each new game.
+
 ## Web preview
 
 From the repository root:

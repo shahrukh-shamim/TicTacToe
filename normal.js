@@ -1,23 +1,25 @@
-// Medium takes an immediate win, blocks an immediate loss, then explores randomly.
+// Cycle through minimax targets on successive computer turns: 1, 1, 0, -1.
 importScripts('hard.js');
+var moveCounter = 0;
+var targetScores = [1, 1, 0, -1];
+
 self.onmessage = function(event) {
     var board = event.data;
     if (isWin(board) || isLoss(board) || isDraw(board)) { self.postMessage(null); return; }
     var states = getStates(board, 2);
-    var winning = states.find(isWin);
-    if (winning) { self.postMessage(winning); return; }
-    var threat = getStates(board, 1).find(isLoss);
-    if (threat) {
-        for (var row = 0; row < 3; row++) {
-            for (var col = 0; col < 3; col++) {
-                if (board[row][col] === 0 && threat[row][col] === 1) {
-                    var blocked = board.map(function(cells) { return cells.slice(); });
-                    blocked[row][col] = 2;
-                    self.postMessage(blocked);
-                    return;
-                }
-            }
-        }
+    var target = targetScores[moveCounter];
+    moveCounter = (moveCounter + 1) % 4;
+
+    // A random opening counts as the first computer turn and skips the search.
+    if (states.length === 9) {
+        self.postMessage(states[Math.floor(Math.random() * states.length)]);
+        return;
     }
-    self.postMessage(states[Math.floor(Math.random() * states.length)]);
+
+    var scores = states.map(function(state) { return Max(state); });
+    var distance = Math.min.apply(null, scores.map(function(score) { return Math.abs(score - target); }));
+    // If a draw target is equally close to a win and a loss, prefer the win.
+    var selectedScore = Math.max.apply(null, scores.filter(function(score) { return Math.abs(score - target) === distance; }));
+    var choices = states.filter(function(state, index) { return scores[index] === selectedScore; });
+    self.postMessage(choices[Math.floor(Math.random() * choices.length)]);
 };
