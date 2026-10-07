@@ -112,17 +112,6 @@ dialog::backdrop {
     font-size: 14px;
 }
 
-.turn-options {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.first-turn-card #computer-first {
-    border-color: var(--color-secondary);
-    background: var(--color-secondary);
-}
-
 .dialog-actions .secondary-action {
     margin-top: 0;
 }
@@ -142,11 +131,4 @@ dialog::backdrop {
     width: 40px;
     height: 40px;
     color: var(--accent);
-}
-
-.turn-options button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
 }

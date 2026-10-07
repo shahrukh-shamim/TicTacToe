@@ -32,5 +32,5 @@ document.getElementById('return-menu').addEventListener('click', function() {
 
 document.getElementById('play-again').addEventListener('click', function() {
     resultDialog.close();
-    chooseFirstPlayer();
+    startGame();
 });

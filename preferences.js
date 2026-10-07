@@ -1,10 +1,12 @@
 // Shared settings store. Apply mark colors before the page is painted.
 var Preferences = (function() {
     var storageKey = 'tic-tac-toe.settings.v1';
+    var alternateKey = 'tic-tac-toe.next-starter.v1';
+    var nextStarter = 'you';
     var defaults = { symbol: 'x', color: 'cyan', difficulty: 'hard', firstTurn: 'you' };
     var choices = {
         symbol: ['o', 'x'], color: ['cyan', 'coral'],
-        difficulty: ['easy', 'medium', 'hard'], firstTurn: ['computer', 'you']
+        difficulty: ['easy', 'medium', 'hard'], firstTurn: ['computer', 'you', 'alternate']
     };
     var current = Object.assign({}, defaults);
     try {
@@ -12,6 +14,7 @@ var Preferences = (function() {
         Object.keys(defaults).forEach(function(key) {
             if (saved && choices[key].includes(saved[key])) current[key] = saved[key];
         });
+        if (localStorage.getItem(alternateKey) === 'computer') nextStarter = 'computer';
     } catch (error) { /* Use defaults if storage is unavailable or invalid. */ }
 
     function cookie(name, value) {
@@ -28,18 +31,23 @@ var Preferences = (function() {
     }
 
     apply();
-    if (!document.cookie.split(';').some(function(part) { return part.trim().startsWith('user='); })) {
-        cookie('user', current.firstTurn === 'you');
-    }
-
     return {
         get: function() { return Object.assign({}, current); },
+        beginGame: function() {
+            if (current.firstTurn !== 'alternate') return current.firstTurn === 'you';
+            var userFirst = nextStarter === 'you';
+            nextStarter = userFirst ? 'computer' : 'you';
+            try { localStorage.setItem(alternateKey, nextStarter); } catch (error) { /* Keep the in-memory choice. */ }
+            return userFirst;
+        },
         update: function(key, value) {
             if (!choices[key] || !choices[key].includes(value)) return false;
+            var resetAlternate = key === 'firstTurn' && value === 'alternate' && current.firstTurn !== value;
             current[key] = value;
             apply();
-            if (key === 'firstTurn') cookie('user', value === 'you');
+            if (resetAlternate) nextStarter = 'you';
             try {
+                if (resetAlternate) localStorage.setItem(alternateKey, nextStarter);
                 localStorage.setItem(storageKey, JSON.stringify(current));
                 return true;
             } catch (error) { return false; }

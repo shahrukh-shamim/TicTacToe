@@ -127,7 +127,7 @@ board =
 var colors = getCookie('colors');
 var level  = getCookie('level');
 var marks  = getCookie('marks');
-var user   = getCookie('user') !== 'false';
+var user   = Preferences.beginGame();
 var game   = true;
 /*	-------	*/
 

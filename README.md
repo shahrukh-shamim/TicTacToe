@@ -15,6 +15,10 @@ the higher score on a tie), with random choices among equally scored moves.
 An empty-board opening is random and counts as its first turn. The counter
 starts over for each new game.
 
+Settings controls who starts each game: Computer, 1P, or Alternate. Alternate
+begins with the player and remembers the next starter across games and visits.
+Play and Play another game start directly, without a first-turn popup.
+
 ## Web preview
 
 From the repository root:
