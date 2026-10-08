@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About · Tic Tac Toe</title>
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="about.css">
+    <script src="preferences.js"></script>
+</head>
+<body>
+    <main class="app-shell about-shell">
+        <header class="page-header">
+            <a href="index.html" class="button button--secondary back-button" aria-label="Back to main menu"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#back"/></svg></a>
+            <h1>About</h1>
+        </header>
+        <section class="card about-hero" aria-labelledby="game-title">
+            <svg class="about-board" viewBox="0 0 180 180" aria-hidden="true"><use href="assets/icons.svg#board"/></svg>
+            <p class="eyebrow">Motabar Labs</p>
+            <h2 id="game-title">Tic Tac Toe</h2>
+            <p class="about-tagline">Three in a row. One more game.</p>
+        </section>
+        <section class="card about-card" aria-labelledby="story-title">
+            <h2 id="story-title">A small game with a long story</h2>
+            <p>This game began in 2017 as a learning project by Shahrukh Shamim, exploring how a computer could plan its next move.</p>
+            <p>Years later, it’s back with a fresh look and a new home on your phone. The curiosity that started it is still here.</p>
+        </section>
+        <section class="card about-card" aria-labelledby="play-title">
+            <h2 id="play-title">Make it your game</h2>
+            <p>Play offline against the computer. Choose Easy, Medium, or Hard, pick your symbol and color, and decide who starts in Settings.</p>
+            <a href="settings.html" class="button button--secondary about-settings">Open Settings <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#settings"/></svg></a>
+        </section>
+        <footer class="about-footer">Made with curiosity. Built to play.</footer>
+    </main>
+</body>
+</html>

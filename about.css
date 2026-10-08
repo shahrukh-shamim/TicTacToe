@@ -1,0 +1,67 @@
+/* Page-specific layout; header, cards, typography, and colors are shared. */
+.about-shell {
+    padding-block: 32px;
+}
+
+.about-hero {
+    padding: 28px 20px;
+    text-align: center;
+    background: radial-gradient(ellipse at 50% 0%, #45d5e810, transparent 70%), var(--color-surface);
+}
+
+.about-board {
+    display: block;
+    width: 140px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 24px;
+}
+
+.about-hero .eyebrow {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.about-hero h2 {
+    margin-bottom: 10px;
+    font-size: clamp(28px, 8vw, 36px);
+    letter-spacing: -1px;
+}
+
+.about-tagline, .about-card p {
+    color: var(--color-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.about-tagline {
+    margin-bottom: 0;
+}
+
+.about-card {
+    margin-top: var(--space-gap);
+    padding: 20px;
+}
+
+.about-card h2 {
+    font-size: 20px;
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+.about-settings {
+    width: 100%;
+}
+
+.about-footer {
+    padding-top: 28px;
+    color: var(--color-muted);
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+}
