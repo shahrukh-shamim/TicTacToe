@@ -16,11 +16,12 @@ var Preferences = (function() {
             }
         }
     } catch (error) { /* Use English when the browser language is unavailable. */ }
-    var defaults = { symbol: 'x', color: 'cyan', difficulty: 'hard', firstTurn: 'you', twoPlayerFirst: '1', language: defaultLanguage };
+    var defaults = { symbol: 'x', color: 'cyan', difficulty: 'hard', firstTurn: 'you', twoPlayerFirst: '1', language: defaultLanguage, vfx: '1' };
     var choices = {
         symbol: ['o', 'x'], color: ['cyan', 'coral'],
         difficulty: ['easy', 'medium', 'hard'], firstTurn: ['computer', 'you', 'alternate'],
-        twoPlayerFirst: ['1', '2'], language: supportedLanguages
+        twoPlayerFirst: ['1', '2'], language: supportedLanguages,
+        vfx: ['0', '1']
     };
     var current = Object.assign({}, defaults);
     try {

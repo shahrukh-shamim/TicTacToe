@@ -49,7 +49,10 @@
     "alternateNote": "Alternate switches the starter each game, beginning with you.",
     "twoPlayerFirstTurn": "2P First Turn",
     "changesSaved": "Changes saved automatically",
-    "changesNotSaved": "Changes could not be saved. Check your browser storage."
+    "changesNotSaved": "Changes could not be saved. Check your browser storage.",
+    "soundEffects": "Sound effects",
+    "soundOn": "Sound on",
+    "soundOff": "Sound off"
   },
   "about": {
     "title": "About",

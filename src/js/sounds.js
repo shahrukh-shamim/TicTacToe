@@ -26,10 +26,10 @@ var GameSounds = (function() {
 
     return {
         play: function(name) {
-            if (!context || !buffers[name]) return;
+            if (Preferences.get().vfx === '0' || !context || !buffers[name]) return;
             unlock();
             buffers[name].then(function(buffer) {
-                if (!buffer || context.state !== 'running') return;
+                if (Preferences.get().vfx === '0' || !buffer || context.state !== 'running') return;
                 var source = context.createBufferSource();
                 source.buffer = buffer;
                 source.connect(context.destination);

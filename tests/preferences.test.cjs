@@ -95,3 +95,15 @@ test('local starter persists independently of single-player alternation', () => 
     prefs.update('twoPlayerFirst', '1');
     assert.equal(load(store).beginGame(), false);
 });
+
+test('sound effects default on and the mute setting persists across visits', () => {
+    const store = new Map();
+    const prefs = load(store);
+    assert.equal(prefs.get().vfx, '1');
+    assert.equal(prefs.update('vfx', '0'), true);
+    assert.equal(load(store).get().vfx, '0');
+    assert.equal(prefs.update('vfx', 'invalid'), false);
+    assert.equal(prefs.get().vfx, '0');
+    assert.equal(prefs.update('vfx', '1'), true);
+    assert.equal(load(store).get().vfx, '1');
+});

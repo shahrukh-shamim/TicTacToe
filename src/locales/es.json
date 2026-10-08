@@ -49,7 +49,10 @@
     "alternateNote": "El turno inicial cambia en cada partida; empiezas tú.",
     "twoPlayerFirstTurn": "Primer turno (2 jugadores)",
     "changesSaved": "Los cambios se guardan automáticamente",
-    "changesNotSaved": "No se pudieron guardar los cambios. Comprueba el almacenamiento del navegador."
+    "changesNotSaved": "No se pudieron guardar los cambios. Comprueba el almacenamiento del navegador.",
+    "soundEffects": "Efectos de sonido",
+    "soundOn": "Sonido activado",
+    "soundOff": "Sonido desactivado"
   },
   "about": {
     "title": "Acerca de",

@@ -79,6 +79,14 @@
                     <label class="option"><input type="radio" name="twoPlayerFirst" value="2"><span class="option-face">2P</span></label>
                 </div>
             </fieldset>
+            <fieldset class="card settings-card">
+                <legend class="visually-hidden" data-i18n="settings.soundEffects">Sound effects</legend>
+                <h2 aria-hidden="true" data-i18n="settings.soundEffects">Sound effects</h2>
+                <div class="settings-options segmented-control">
+                    <label class="option"><input type="radio" name="vfx" value="1" aria-label="Sound on" data-i18n-aria-label="settings.soundOn"><span class="option-face"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#volume"/></svg> <span data-i18n="settings.soundOn">Sound on</span></span></label>
+                    <label class="option"><input type="radio" name="vfx" value="0" aria-label="Sound off" data-i18n-aria-label="settings.soundOff"><span class="option-face"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#volume-off"/></svg> <span data-i18n="settings.soundOff">Sound off</span></span></label>
+                </div>
+            </fieldset>
         </form>
         <p id="save-status" class="save-status" role="status" data-i18n="settings.changesSaved">Changes saved automatically</p>
     </main>

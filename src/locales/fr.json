@@ -49,7 +49,10 @@
     "alternateNote": "Le premier joueur change à chaque partie. Vous commencez.",
     "twoPlayerFirstTurn": "Premier tour (2 joueurs)",
     "changesSaved": "Modifications enregistrées automatiquement",
-    "changesNotSaved": "Impossible d’enregistrer les modifications. Vérifiez le stockage de votre navigateur."
+    "changesNotSaved": "Impossible d’enregistrer les modifications. Vérifiez le stockage de votre navigateur.",
+    "soundEffects": "Effets sonores",
+    "soundOn": "Son activé",
+    "soundOff": "Son désactivé"
   },
   "about": {
     "title": "À propos",

@@ -49,7 +49,10 @@
     "alternateNote": "Quem começa muda em cada partida, começando por ti.",
     "twoPlayerFirstTurn": "Primeira jogada (2 jogadores)",
     "changesSaved": "As alterações são guardadas automaticamente",
-    "changesNotSaved": "Não foi possível guardar as alterações. Verifica o armazenamento do navegador."
+    "changesNotSaved": "Não foi possível guardar as alterações. Verifica o armazenamento do navegador.",
+    "soundEffects": "Efeitos sonoros",
+    "soundOn": "Som ligado",
+    "soundOff": "Som desligado"
   },
   "about": {
     "title": "Sobre",

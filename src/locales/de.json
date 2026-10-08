@@ -49,7 +49,10 @@
     "alternateNote": "Die Startperson wechselt in jeder Runde. Du beginnst.",
     "twoPlayerFirstTurn": "2P: Erster Zug",
     "changesSaved": "Änderungen werden automatisch gespeichert",
-    "changesNotSaved": "Änderungen konnten nicht gespeichert werden. Überprüfe deinen Browserspeicher."
+    "changesNotSaved": "Änderungen konnten nicht gespeichert werden. Überprüfe deinen Browserspeicher.",
+    "soundEffects": "Soundeffekte",
+    "soundOn": "Ton an",
+    "soundOff": "Ton aus"
   },
   "about": {
     "title": "Über",
