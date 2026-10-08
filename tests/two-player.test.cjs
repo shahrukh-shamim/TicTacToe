@@ -7,6 +7,7 @@ const vm = require('node:vm');
 function load(starter = '1', symbol = 'x') {
     const elements = new Map();
     const timers = [];
+    const sounds = [];
     function element(id) {
         if (!elements.has(id)) elements.set(id, {
             id, dataset: { occupied: 'false' }, style: {},
@@ -26,13 +27,14 @@ function load(starter = '1', symbol = 'x') {
         Preferences: { get: () => ({ twoPlayerFirst: starter }), beginGame() { assert.fail('local mode must not consume single-player alternation'); } },
         Localization: { ready: Promise.resolve(), t: key => key },
         Worker() { assert.fail('local mode must not create an AI worker'); },
+        GameSounds: { play(name) { sounds.push(name); } },
         ready: true,
         setTimeout(callback) { timers.push(callback); },
         endGame(outcome) { context.outcome = outcome; context.game = false; }
     });
     vm.runInContext(readFileSync(path.join(__dirname, '../src/js/game.js'), 'utf8'), context);
     return {
-        context, element,
+        context, element, sounds,
         click(cell) { rects[cell - 1].click(); },
         flush() { while (timers.length) timers.shift()(); }
     };
@@ -48,6 +50,7 @@ test('local turns reject rapid taps and occupied cells, and stop at a Player 1 w
     assert.equal(game.context.currentPlayer, 2);
     for (const cell of [4, 2, 5, 3]) { game.click(cell); game.flush(); }
     assert.equal(game.context.outcome, 'playerOneWin');
+    assert.deepEqual(game.sounds, ['cross', 'circle', 'cross', 'circle', 'cross', 'line']);
     game.click(9);
     assert.equal(game.context.board[2][2], 0);
 });
@@ -64,6 +67,7 @@ test('a full local board ends in a draw', () => {
     const game = load();
     for (const cell of [1, 2, 3, 5, 4, 6, 8, 7, 9]) { game.click(cell); game.flush(); }
     assert.equal(game.context.outcome, 'draw');
+    assert.equal(game.sounds.includes('line'), false);
 });
 
 test('replay preserves local mode and Play opens single player from the menu', () => {

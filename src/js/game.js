@@ -194,6 +194,7 @@ function marking(symbol, symbolObject, onComplete, width)
 
 function markCircle(id, onComplete)
 {
+    GameSounds.play('circle');
 	var ci = document.getElementById('c'+id) // circle object
 	marking(0, ci, onComplete);
 }
@@ -201,6 +202,7 @@ function markCircle(id, onComplete)
 
 function markCross(CrossClass, onComplete)
 {
+    GameSounds.play('cross');
 	var cr = document.getElementsByClassName(CrossClass) // cross object
 	marking(1, cr, onComplete);
 }
@@ -213,6 +215,7 @@ function finishTurn(player)
     if (!game) return true;
     if (player === 1 ? isWin() : isLoss())
     {
+        GameSounds.play('line');
         endGame(twoPlayer ? (player === 1 ? 'playerOneWin' : 'playerTwoWin') : (player === 1 ? 'win' : 'loss'));
         return true;
     }
