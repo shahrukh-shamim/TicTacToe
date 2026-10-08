@@ -21,7 +21,8 @@
     "about": "حول اللعبة",
     "exit": "خروج",
     "onlineComingSoonLabel": "العب عبر الإنترنت",
-    "onlineComingSoonTitle": "قريبًا جدًا"
+    "onlineComingSoonTitle": "قريبًا جدًا",
+    "twoPlayers": "لاعبان"
   },
   "settings": {
     "title": "الإعدادات",

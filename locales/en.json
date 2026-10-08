@@ -21,7 +21,8 @@
     "about": "About",
     "exit": "Exit",
     "onlineComingSoonLabel": "Play online",
-    "onlineComingSoonTitle": "Coming soon, really soon"
+    "onlineComingSoonTitle": "Coming soon, really soon",
+    "twoPlayers": "Two players"
   },
   "settings": {
     "title": "Settings",
