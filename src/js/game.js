@@ -229,16 +229,16 @@ for (var i = 0; i < rects.length; i++)
 switch (level)
 {
 	case '1':
-		controller = new Worker('easy.js');
+		controller = new Worker('workers/easy.js');
 		break;
 	case '2':
-		controller = new Worker('normal.js');
+		controller = new Worker('workers/normal.js');
 		break;
 	case '3':
-		controller = new Worker('hard.js');
+		controller = new Worker('workers/hard.js');
 		break;
 	default:
-		controller = new Worker('hard.js');
+		controller = new Worker('workers/hard.js');
 		break;
 }
 /*	-------	*/

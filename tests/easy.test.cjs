@@ -4,7 +4,7 @@ const path = require('node:path');
 const { test } = require('node:test');
 const vm = require('node:vm');
 
-const root = path.resolve(__dirname, '..');
+const root = path.resolve(__dirname, '..', 'src', 'workers');
 function worker(random = 0, forbidSearch = false) {
     let reply;
     const context = vm.createContext({

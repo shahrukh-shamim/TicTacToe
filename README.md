@@ -19,15 +19,30 @@ Settings controls who starts each game: Computer, 1P, or Alternate. Alternate
 begins with the player and remembers the next starter across games and visits.
 Play and Play another game start directly, without a first-turn popup.
 
+## Project layout
+
+- `src/`: HTML pages and browser files.
+  - `styles/`: shared and page stylesheets.
+  - `js/`: interface, settings, localization, and game scripts.
+  - `workers/`: Easy, Normal, and Hard AI workers.
+  - `assets/`: bundled font, icons, and original bitmap images.
+  - `locales/`: translation files.
+- `docs/`: [styling guide](docs/STYLING.md).
+- `legacy/`: original PHP page, retained for reference.
+- `scripts/`: web packaging script.
+- `tests/`: automated checks.
+- `android/`: native Android project.
+- `dist/`: generated web build.
+
 ## Web preview
 
 From the repository root:
 
 ```sh
-python3 -m http.server 7000
+python3 -m http.server 7000 --directory src
 ```
 
-Open `http://localhost:7000`. Edit the web files in the repository root; `dist/`
+Open `http://localhost:7000`. Edit the web files in `src/`; `dist/`
 and Android's copied web assets are generated and should not be edited.
 
 ## Android debug build

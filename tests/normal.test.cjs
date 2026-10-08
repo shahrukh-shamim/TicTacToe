@@ -3,7 +3,7 @@ const { readFileSync } = require('node:fs');
 const path = require('node:path');
 const { test } = require('node:test');
 const vm = require('node:vm');
-const root = path.resolve(__dirname, '..');
+const root = path.resolve(__dirname, '..', 'src', 'workers');
 function worker(random = 0) {
     let reply;
     const context = vm.createContext({

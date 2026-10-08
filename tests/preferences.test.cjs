@@ -3,7 +3,7 @@ const { readFileSync } = require('node:fs');
 const path = require('node:path');
 const { test } = require('node:test');
 const vm = require('node:vm');
-const source = readFileSync(path.join(__dirname, '..', 'preferences.js'), 'utf8');
+const source = readFileSync(path.join(__dirname, '..', 'src', 'js', 'preferences.js'), 'utf8');
 function load(store = new Map(), unavailable = false, deviceLanguage) {
     const context = vm.createContext({
         document: { cookie: 'user=false', documentElement: { style: { setProperty() {} } } },
@@ -69,14 +69,14 @@ test('Play and replay navigate directly without creating a chooser', () => {
         window: { location: { href: '' } },
         document: { getElementById(id) { return { addEventListener(event, handler) { handlers[id] = handler; } }; } }
     });
-    vm.runInContext(readFileSync(path.join(__dirname, '..', 'menu.js'), 'utf8'), context);
+    vm.runInContext(readFileSync(path.join(__dirname, '..', 'src', 'js', 'menu.js'), 'utf8'), context);
     handlers.play();
     assert.equal(context.window.location.href, 'game.html');
     let closed = false;
     context.document.getElementById = id => id === 'game-result'
         ? { addEventListener() {}, close() { closed = true; } }
         : { addEventListener(event, handler) { handlers[id] = handler; } };
-    vm.runInContext(readFileSync(path.join(__dirname, '..', 'result.js'), 'utf8'), context);
+    vm.runInContext(readFileSync(path.join(__dirname, '..', 'src', 'js', 'result.js'), 'utf8'), context);
     context.window.location.href = '';
     handlers['play-again']();
     assert.equal(closed, true);

@@ -4,7 +4,7 @@ const path = require('node:path');
 const { test } = require('node:test');
 const vm = require('node:vm');
 
-const root = path.join(__dirname, '..');
+const root = path.join(__dirname, '..', 'src');
 const localeDir = path.join(root, 'locales');
 const localeFiles = readdirSync(localeDir).filter(file => file.endsWith('.json'));
 const locales = Object.fromEntries(localeFiles.map(file => [
@@ -80,7 +80,7 @@ test('language changes translate page text and set right-to-left direction where
         Preferences: { get: () => ({ language: 'en' }), update: () => true },
         console: { error() {} }
     });
-    vm.runInContext(readFileSync(path.join(root, 'localization.js'), 'utf8'), context);
+    vm.runInContext(readFileSync(path.join(root, 'js', 'localization.js'), 'utf8'), context);
     assert.equal(document.documentElement.lang, 'en');
     assert.equal(document.documentElement.dir, 'ltr');
     await context.Localization.ready;
@@ -103,7 +103,7 @@ test('saved Arabic and Persian direction is applied before locale files finish l
         Preferences: { get: () => ({ language: 'ar' }), update: () => true },
         console: { error() {} }
     });
-    vm.runInContext(readFileSync(path.join(root, 'localization.js'), 'utf8'), context);
+    vm.runInContext(readFileSync(path.join(root, 'js', 'localization.js'), 'utf8'), context);
     assert.equal(document.documentElement.lang, 'ar');
     assert.equal(document.documentElement.dir, 'rtl');
 });
