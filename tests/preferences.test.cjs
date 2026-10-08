@@ -4,9 +4,10 @@ const path = require('node:path');
 const { test } = require('node:test');
 const vm = require('node:vm');
 const source = readFileSync(path.join(__dirname, '..', 'preferences.js'), 'utf8');
-function load(store = new Map(), unavailable = false) {
+function load(store = new Map(), unavailable = false, deviceLanguage) {
     const context = vm.createContext({
         document: { cookie: 'user=false', documentElement: { style: { setProperty() {} } } },
+        navigator: deviceLanguage ? { languages: [deviceLanguage], language: deviceLanguage } : undefined,
         localStorage: {
             getItem(key) { if (unavailable) throw Error('storage disabled'); return store.get(key) || null; },
             setItem(key, value) { if (unavailable) throw Error('storage disabled'); store.set(key, value); }
@@ -49,6 +50,18 @@ test('storage failures still allow play and in-memory alternation', () => {
     prefs.update('firstTurn', 'alternate');
     assert.equal(prefs.beginGame(), true);
     assert.equal(prefs.beginGame(), false);
+});
+test('language preference accepts supported locales and persists across visits', () => {
+    const store = new Map();
+    const prefs = load(store);
+    assert.equal(prefs.update('language', 'fa'), true);
+    assert.equal(load(store).get().language, 'fa');
+    assert.equal(prefs.update('language', 'xx'), false);
+    assert.equal(load(store).get().language, 'fa');
+});
+test('first visit follows a supported device language and falls back to English', () => {
+    assert.equal(load(new Map(), false, 'fa-IR').get().language, 'fa');
+    assert.equal(load(new Map(), false, 'it-IT').get().language, 'en');
 });
 test('Play and replay navigate directly without creating a chooser', () => {
     const handlers = {};

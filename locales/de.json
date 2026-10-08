@@ -1,0 +1,92 @@
+{
+  "languageName": "Deutsch",
+  "direction": "ltr",
+  "common": {
+    "gameTitle": "Tic Tac Toe",
+    "backToMainMenu": "Zurück zum Hauptmenü",
+    "gotIt": "Verstanden",
+    "cancel": "Abbrechen"
+  },
+  "pages": {
+    "menuTitle": "Tic Tac Toe",
+    "settingsTitle": "Einstellungen · Tic Tac Toe",
+    "aboutTitle": "Über · Tic Tac Toe"
+  },
+  "menu": {
+    "tagline": "Dein nächster Zug beginnt hier",
+    "navigationLabel": "Hauptmenü",
+    "play": "Spielen",
+    "playOnline": "Online spielen",
+    "settings": "Einstellungen",
+    "about": "Über",
+    "exit": "Beenden",
+    "onlineComingSoonLabel": "Online spielen",
+    "onlineComingSoonTitle": "Kommt bald – versprochen"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "language": "Sprache",
+    "languageLabel": "Sprache auswählen",
+    "languageLoadFailed": "Diese Sprache konnte nicht geladen werden. Bitte versuche es erneut.",
+    "yourSymbol": "Dein Symbol",
+    "symbols": "Symbole",
+    "playAsO": "Als O spielen",
+    "playAsX": "Als X spielen",
+    "yourMarkColor": "Farbe deiner Symbole",
+    "colors": "Farben",
+    "cyanMarks": "Türkise Symbole",
+    "coralMarks": "Korallrote Symbole",
+    "difficulty": "Schwierigkeit",
+    "easy": "Einfach",
+    "medium": "Mittel",
+    "hard": "Schwer",
+    "preferredFirstTurn": "Wer soll gegen den Computer beginnen?",
+    "onePlayerFirstTurn": "1P: Erster Zug",
+    "computer": "Computer",
+    "you": "1P",
+    "alternate": "Abwechselnd",
+    "alternateNote": "Die Startperson wechselt in jeder Runde. Du beginnst.",
+    "twoPlayerFirstTurn": "2P: Erster Zug",
+    "twoPlayerModeComingSoon": "Mehrspielermodus folgt bald",
+    "changesSaved": "Änderungen werden automatisch gespeichert",
+    "changesNotSaved": "Änderungen konnten nicht gespeichert werden. Überprüfe deinen Browserspeicher."
+  },
+  "about": {
+    "title": "Über",
+    "studio": "Motabar Labs",
+    "tagline": "Drei in einer Reihe. Noch eine Runde.",
+    "storyHeading": "Ein kleines Spiel mit langer Geschichte",
+    "storyParagraphOne": "Dieses Spiel begann 2017 als Lernprojekt von Shahrukh Shamim. Dabei ging es darum, wie ein Computer seinen nächsten Zug planen kann.",
+    "storyParagraphTwo": "Jahre später ist es mit neuem Design auf deinem Smartphone zurück. Die Neugier, mit der alles begann, ist geblieben.",
+    "customizeHeading": "Gestalte dein Spiel",
+    "customizeDescription": "Spiele offline gegen den Computer. Wähle den Schwierigkeitsgrad, dein Symbol und deine Farbe und lege in den Einstellungen fest, wer beginnt.",
+    "openSettings": "Einstellungen öffnen",
+    "footer": "Mit Neugier entwickelt. Zum Spielen gemacht."
+  },
+  "game": {
+    "playerSymbols": "Spielersymbole",
+    "you": "Du",
+    "versus": "gegen",
+    "computer": "Computer",
+    "board": "Spielfeld",
+    "ticTacToeBoard": "Tic-Tac-Toe-Spielfeld",
+    "resign": "Aufgeben",
+    "resignLabel": "Diese Runde verlassen?",
+    "resignConfirmation": "Möchtest du wirklich aufgeben?",
+    "confirmResign": "Ja, aufgeben",
+    "roundComplete": "Runde beendet",
+    "playAgain": "Noch eine Runde spielen",
+    "returnToMainMenu": "Zurück zum Hauptmenü",
+    "cancel": "Abbrechen"
+  },
+  "results": {
+    "winTitle": "Du gewinnst! 🎉",
+    "winMessage": "Drei in einer Reihe. Diese Runde gehört dir!",
+    "lossTitle": "Der Computer gewinnt 😎",
+    "lossMessage": "Der Computer gewinnt diese Runde. Bereit für eine Revanche?",
+    "drawTitle": "Unentschieden! 🤝",
+    "drawMessage": "Alle Felder sind voll. Ein ausgeglichenes Spiel!",
+    "resignTitle": "Der Computer gewinnt 😎",
+    "resignMessage": "Du hast diese Runde aufgegeben. Ein neues Spielfeld wartet."
+  }
+}

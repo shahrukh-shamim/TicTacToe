@@ -3,10 +3,24 @@ var Preferences = (function() {
     var storageKey = 'tic-tac-toe.settings.v1';
     var alternateKey = 'tic-tac-toe.next-starter.v1';
     var nextStarter = 'you';
-    var defaults = { symbol: 'x', color: 'cyan', difficulty: 'hard', firstTurn: 'you' };
+    var supportedLanguages = ['de', 'en', 'ar', 'fa', 'fr', 'es', 'pt'];
+    var defaultLanguage = 'en';
+    try {
+        var deviceLanguages = navigator.languages && navigator.languages.length
+            ? navigator.languages : [navigator.language];
+        for (var i = 0; i < deviceLanguages.length; i++) {
+            var baseLanguage = deviceLanguages[i].toLowerCase().split('-')[0];
+            if (supportedLanguages.includes(baseLanguage)) {
+                defaultLanguage = baseLanguage;
+                break;
+            }
+        }
+    } catch (error) { /* Use English when the browser language is unavailable. */ }
+    var defaults = { symbol: 'x', color: 'cyan', difficulty: 'hard', firstTurn: 'you', language: defaultLanguage };
     var choices = {
         symbol: ['o', 'x'], color: ['cyan', 'coral'],
-        difficulty: ['easy', 'medium', 'hard'], firstTurn: ['computer', 'you', 'alternate']
+        difficulty: ['easy', 'medium', 'hard'], firstTurn: ['computer', 'you', 'alternate'],
+        language: supportedLanguages
     };
     var current = Object.assign({}, defaults);
     try {

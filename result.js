@@ -1,9 +1,9 @@
 var resultDialog = document.getElementById('game-result');
 var resultContent = {
-    win: { title: 'You win! 🎉', icon: 'trophy', message: 'Three in a row. This round is yours!' },
-    loss: { title: 'Computer wins 😎', icon: 'robot', message: 'The computer takes this round. Ready for a rematch?' },
-    draw: { title: 'It’s a draw! 🤝', icon: 'sparkle', message: 'Every square filled. An evenly matched finish!' },
-    resign: { title: 'Computer wins 😎', icon: 'robot', message: 'You resigned this round. A fresh board awaits.' }
+    win: { title: 'results.winTitle', icon: 'trophy', message: 'results.winMessage' },
+    loss: { title: 'results.lossTitle', icon: 'robot', message: 'results.lossMessage' },
+    draw: { title: 'results.drawTitle', icon: 'sparkle', message: 'results.drawMessage' },
+    resign: { title: 'results.resignTitle', icon: 'robot', message: 'results.resignMessage' }
 };
 
 function endGame(outcome) {
@@ -16,10 +16,12 @@ function endGame(outcome) {
     if (confirmation.open) confirmation.close();
     var content = resultContent[outcome];
     resultDialog.dataset.outcome = outcome;
-    document.getElementById('result-title').textContent = content.title;
     document.getElementById('result-icon').innerHTML = '<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#' + content.icon + '"/></svg>';
-    document.getElementById('result-message').textContent = content.message;
-    resultDialog.showModal();
+    Localization.ready.then(function() {
+        document.getElementById('result-title').textContent = Localization.t(content.title);
+        document.getElementById('result-message').textContent = Localization.t(content.message);
+        resultDialog.showModal();
+    });
 }
 
 resultDialog.addEventListener('cancel', function(event) {

@@ -1,0 +1,92 @@
+{
+  "languageName": "Português",
+  "direction": "ltr",
+  "common": {
+    "gameTitle": "Jogo do galo",
+    "backToMainMenu": "Voltar ao menu principal",
+    "gotIt": "Entendi",
+    "cancel": "Cancelar"
+  },
+  "pages": {
+    "menuTitle": "Jogo do galo",
+    "settingsTitle": "Definições · Jogo do galo",
+    "aboutTitle": "Sobre · Jogo do galo"
+  },
+  "menu": {
+    "tagline": "A tua próxima jogada começa aqui",
+    "navigationLabel": "Menu principal",
+    "play": "Jogar",
+    "playOnline": "Jogar online",
+    "settings": "Definições",
+    "about": "Sobre",
+    "exit": "Sair",
+    "onlineComingSoonLabel": "Jogar online",
+    "onlineComingSoonTitle": "Muito em breve"
+  },
+  "settings": {
+    "title": "Definições",
+    "language": "Idioma",
+    "languageLabel": "Escolher idioma",
+    "languageLoadFailed": "Não foi possível carregar esse idioma. Tenta novamente.",
+    "yourSymbol": "O teu símbolo",
+    "symbols": "Símbolos",
+    "playAsO": "Jogar com O",
+    "playAsX": "Jogar com X",
+    "yourMarkColor": "Cor dos teus símbolos",
+    "colors": "Cores",
+    "cyanMarks": "Símbolos ciano",
+    "coralMarks": "Símbolos coral",
+    "difficulty": "Dificuldade",
+    "easy": "Fácil",
+    "medium": "Média",
+    "hard": "Difícil",
+    "preferredFirstTurn": "Quem começa contra o computador?",
+    "onePlayerFirstTurn": "Primeira jogada (1 jogador)",
+    "computer": "Computador",
+    "you": "1J",
+    "alternate": "Alternar",
+    "alternateNote": "Quem começa muda em cada partida, começando por ti.",
+    "twoPlayerFirstTurn": "Primeira jogada (2 jogadores)",
+    "twoPlayerModeComingSoon": "O modo para dois jogadores chega em breve",
+    "changesSaved": "As alterações são guardadas automaticamente",
+    "changesNotSaved": "Não foi possível guardar as alterações. Verifica o armazenamento do navegador."
+  },
+  "about": {
+    "title": "Sobre",
+    "studio": "Motabar Labs",
+    "tagline": "Três em linha. Mais uma partida.",
+    "storyHeading": "Um jogo pequeno com uma longa história",
+    "storyParagraphOne": "Este jogo começou em 2017 como um projeto de aprendizagem de Shahrukh Shamim, que explorava como um computador podia planear a jogada seguinte.",
+    "storyParagraphTwo": "Anos depois, regressa com um visual renovado e chega ao teu telemóvel. A curiosidade que lhe deu origem continua aqui.",
+    "customizeHeading": "Personaliza o teu jogo",
+    "customizeDescription": "Joga offline contra o computador. Escolhe a dificuldade, o teu símbolo e a cor, e decide nas definições quem começa.",
+    "openSettings": "Abrir definições",
+    "footer": "Feito com curiosidade. Criado para jogar."
+  },
+  "game": {
+    "playerSymbols": "Símbolos dos jogadores",
+    "you": "Tu",
+    "versus": "contra",
+    "computer": "Computador",
+    "board": "Tabuleiro de jogo",
+    "ticTacToeBoard": "Tabuleiro de jogo do galo",
+    "resign": "Desistir",
+    "resignLabel": "Queres sair desta partida?",
+    "resignConfirmation": "Tens a certeza de que queres desistir?",
+    "confirmResign": "Sim, desistir",
+    "roundComplete": "Partida terminada",
+    "playAgain": "Jogar outra partida",
+    "returnToMainMenu": "Voltar ao menu principal",
+    "cancel": "Cancelar"
+  },
+  "results": {
+    "winTitle": "Ganhaste! 🎉",
+    "winMessage": "Três em linha. Esta partida é tua!",
+    "lossTitle": "O computador ganhou 😎",
+    "lossMessage": "O computador venceu esta partida. Pronto para a desforra?",
+    "drawTitle": "Empate! 🤝",
+    "drawMessage": "Todas as casas estão ocupadas. Foi uma partida equilibrada!",
+    "resignTitle": "O computador ganhou 😎",
+    "resignMessage": "Desististe desta partida. Um novo tabuleiro espera por ti."
+  }
+}

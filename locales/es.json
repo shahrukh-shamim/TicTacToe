@@ -1,0 +1,92 @@
+{
+  "languageName": "Español",
+  "direction": "ltr",
+  "common": {
+    "gameTitle": "Tres en raya",
+    "backToMainMenu": "Volver al menú principal",
+    "gotIt": "Entendido",
+    "cancel": "Cancelar"
+  },
+  "pages": {
+    "menuTitle": "Tres en raya",
+    "settingsTitle": "Ajustes · Tres en raya",
+    "aboutTitle": "Acerca de · Tres en raya"
+  },
+  "menu": {
+    "tagline": "Tu próxima jugada empieza aquí",
+    "navigationLabel": "Menú principal",
+    "play": "Jugar",
+    "playOnline": "Jugar en línea",
+    "settings": "Ajustes",
+    "about": "Acerca de",
+    "exit": "Salir",
+    "onlineComingSoonLabel": "Jugar en línea",
+    "onlineComingSoonTitle": "Muy pronto"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "language": "Idioma",
+    "languageLabel": "Elegir idioma",
+    "languageLoadFailed": "No se pudo cargar ese idioma. Inténtalo de nuevo.",
+    "yourSymbol": "Tu símbolo",
+    "symbols": "Símbolos",
+    "playAsO": "Jugar con O",
+    "playAsX": "Jugar con X",
+    "yourMarkColor": "Color de tus símbolos",
+    "colors": "Colores",
+    "cyanMarks": "Símbolos cian",
+    "coralMarks": "Símbolos coral",
+    "difficulty": "Dificultad",
+    "easy": "Fácil",
+    "medium": "Media",
+    "hard": "Difícil",
+    "preferredFirstTurn": "¿Quién empieza contra el ordenador?",
+    "onePlayerFirstTurn": "Primer turno (1 jugador)",
+    "computer": "Ordenador",
+    "you": "1J",
+    "alternate": "Alternar",
+    "alternateNote": "El turno inicial cambia en cada partida; empiezas tú.",
+    "twoPlayerFirstTurn": "Primer turno (2 jugadores)",
+    "twoPlayerModeComingSoon": "El modo para dos jugadores llegará pronto",
+    "changesSaved": "Los cambios se guardan automáticamente",
+    "changesNotSaved": "No se pudieron guardar los cambios. Comprueba el almacenamiento del navegador."
+  },
+  "about": {
+    "title": "Acerca de",
+    "studio": "Motabar Labs",
+    "tagline": "Tres en raya. Una partida más.",
+    "storyHeading": "Un juego pequeño con una larga historia",
+    "storyParagraphOne": "Este juego empezó en 2017 como un proyecto de aprendizaje de Shahrukh Shamim para explorar cómo un ordenador podía planear su siguiente jugada.",
+    "storyParagraphTwo": "Años después, vuelve con una nueva imagen y llega a tu móvil. La curiosidad que lo puso en marcha sigue aquí.",
+    "customizeHeading": "Hazlo a tu manera",
+    "customizeDescription": "Juega sin conexión contra el ordenador. Elige la dificultad, tu símbolo y su color, y decide en Ajustes quién empieza.",
+    "openSettings": "Abrir ajustes",
+    "footer": "Nació de la curiosidad. Hecho para jugar."
+  },
+  "game": {
+    "playerSymbols": "Símbolos de los jugadores",
+    "you": "Tú",
+    "versus": "contra",
+    "computer": "Ordenador",
+    "board": "Tablero de juego",
+    "ticTacToeBoard": "Tablero de tres en raya",
+    "resign": "Abandonar",
+    "resignLabel": "¿Salir de esta partida?",
+    "resignConfirmation": "¿Seguro que quieres abandonar?",
+    "confirmResign": "Sí, abandonar",
+    "roundComplete": "Partida terminada",
+    "playAgain": "Jugar otra partida",
+    "returnToMainMenu": "Volver al menú principal",
+    "cancel": "Cancelar"
+  },
+  "results": {
+    "winTitle": "¡Has ganado! 🎉",
+    "winMessage": "Tres en raya. ¡Esta partida es tuya!",
+    "lossTitle": "Gana el ordenador 😎",
+    "lossMessage": "El ordenador gana esta partida. ¿Listo para la revancha?",
+    "drawTitle": "¡Empate! 🤝",
+    "drawMessage": "Todas las casillas están ocupadas. ¡Un final muy igualado!",
+    "resignTitle": "Gana el ordenador 😎",
+    "resignMessage": "Has abandonado esta partida. Te espera un tablero nuevo."
+  }
+}

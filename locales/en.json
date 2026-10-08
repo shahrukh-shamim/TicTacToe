@@ -1,0 +1,92 @@
+{
+  "languageName": "English",
+  "direction": "ltr",
+  "common": {
+    "gameTitle": "Tic Tac Toe",
+    "backToMainMenu": "Back to main menu",
+    "gotIt": "Got it",
+    "cancel": "Cancel"
+  },
+  "pages": {
+    "menuTitle": "Tic Tac Toe",
+    "settingsTitle": "Settings · Tic Tac Toe",
+    "aboutTitle": "About · Tic Tac Toe"
+  },
+  "menu": {
+    "tagline": "Your next move starts here",
+    "navigationLabel": "Main menu",
+    "play": "Play",
+    "playOnline": "Play online",
+    "settings": "Settings",
+    "about": "About",
+    "exit": "Exit",
+    "onlineComingSoonLabel": "Play online",
+    "onlineComingSoonTitle": "Coming soon, really soon"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "languageLabel": "Choose language",
+    "languageLoadFailed": "Could not load that language. Please try again.",
+    "yourSymbol": "Your symbol",
+    "symbols": "Symbols",
+    "playAsO": "Play as O",
+    "playAsX": "Play as X",
+    "yourMarkColor": "Your mark color",
+    "colors": "Colors",
+    "cyanMarks": "Cyan marks",
+    "coralMarks": "Coral marks",
+    "difficulty": "Difficulty",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "preferredFirstTurn": "Preferred first turn against the computer",
+    "onePlayerFirstTurn": "1P First Turn",
+    "computer": "Computer",
+    "you": "1P",
+    "alternate": "Alternate",
+    "alternateNote": "Alternate switches the starter each game, beginning with you.",
+    "twoPlayerFirstTurn": "2P First Turn",
+    "twoPlayerModeComingSoon": "Two-player mode coming soon",
+    "changesSaved": "Changes saved automatically",
+    "changesNotSaved": "Changes could not be saved. Check your browser storage."
+  },
+  "about": {
+    "title": "About",
+    "studio": "Motabar Labs",
+    "tagline": "Three in a row. One more game.",
+    "storyHeading": "A small game with a long story",
+    "storyParagraphOne": "This game began in 2017 as a learning project by Shahrukh Shamim, exploring how a computer could plan its next move.",
+    "storyParagraphTwo": "Years later, it’s back with a fresh look and a new home on your phone. The curiosity that started it is still here.",
+    "customizeHeading": "Make it your game",
+    "customizeDescription": "Play offline against the computer. Choose Easy, Medium, or Hard, pick your symbol and color, and decide who starts in Settings.",
+    "openSettings": "Open Settings",
+    "footer": "Made with curiosity. Built to play."
+  },
+  "game": {
+    "playerSymbols": "Player symbols",
+    "you": "You",
+    "versus": "vs",
+    "computer": "Computer",
+    "board": "Game board",
+    "ticTacToeBoard": "Tic tac toe board",
+    "resign": "Resign",
+    "resignLabel": "Leave this round?",
+    "resignConfirmation": "Are you sure you want to resign?",
+    "confirmResign": "Yes, resign",
+    "roundComplete": "Round complete",
+    "playAgain": "Play another game",
+    "returnToMainMenu": "Return to main menu",
+    "cancel": "Cancel"
+  },
+  "results": {
+    "winTitle": "You win! 🎉",
+    "winMessage": "Three in a row. This round is yours!",
+    "lossTitle": "Computer wins 😎",
+    "lossMessage": "The computer takes this round. Ready for a rematch?",
+    "drawTitle": "It’s a draw! 🤝",
+    "drawMessage": "Every square filled. An evenly matched finish!",
+    "resignTitle": "Computer wins 😎",
+    "resignMessage": "You resigned this round. A fresh board awaits."
+  }
+}

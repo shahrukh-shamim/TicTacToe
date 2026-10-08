@@ -14,4 +14,5 @@ for (const entry of await readdir(root, { withFileTypes: true })) {
   }
 }
 await cp(path.join(root, 'assets'), path.join(output, 'assets'), { recursive: true });
+await cp(path.join(root, 'locales'), path.join(output, 'locales'), { recursive: true });
 console.log('Packaged web pages, styles, scripts, workers, and assets into dist/.');

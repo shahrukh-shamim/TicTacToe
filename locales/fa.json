@@ -1,0 +1,92 @@
+{
+  "languageName": "فارسی",
+  "direction": "rtl",
+  "common": {
+    "gameTitle": "دوز",
+    "backToMainMenu": "بازگشت به منوی اصلی",
+    "gotIt": "متوجه شدم",
+    "cancel": "لغو"
+  },
+  "pages": {
+    "menuTitle": "دوز",
+    "settingsTitle": "تنظیمات · دوز",
+    "aboutTitle": "درباره · دوز"
+  },
+  "menu": {
+    "tagline": "حرکت بعدی تو از اینجا شروع می‌شود",
+    "navigationLabel": "منوی اصلی",
+    "play": "بازی",
+    "playOnline": "بازی آنلاین",
+    "settings": "تنظیمات",
+    "about": "درباره",
+    "exit": "خروج",
+    "onlineComingSoonLabel": "بازی آنلاین",
+    "onlineComingSoonTitle": "به‌زودی، خیلی زود"
+  },
+  "settings": {
+    "title": "تنظیمات",
+    "language": "زبان",
+    "languageLabel": "انتخاب زبان",
+    "languageLoadFailed": "بارگذاری این زبان ممکن نشد. لطفاً دوباره تلاش کنید.",
+    "yourSymbol": "نماد شما",
+    "symbols": "نمادها",
+    "playAsO": "بازی با O",
+    "playAsX": "بازی با X",
+    "yourMarkColor": "رنگ نمادهای شما",
+    "colors": "رنگ‌ها",
+    "cyanMarks": "نمادهای فیروزه‌ای",
+    "coralMarks": "نمادهای مرجانی",
+    "difficulty": "درجه سختی",
+    "easy": "آسان",
+    "medium": "متوسط",
+    "hard": "سخت",
+    "preferredFirstTurn": "در بازی با رایانه چه کسی شروع کند؟",
+    "onePlayerFirstTurn": "نوبت شروع تک‌نفره",
+    "computer": "رایانه",
+    "you": "۱P",
+    "alternate": "یکی‌درمیان",
+    "alternateNote": "شروع بازی در هر دور عوض می‌شود و ابتدا شما شروع می‌کنید.",
+    "twoPlayerFirstTurn": "نوبت شروع دونفره",
+    "twoPlayerModeComingSoon": "بازی دونفره به‌زودی",
+    "changesSaved": "تغییرات به‌طور خودکار ذخیره می‌شوند",
+    "changesNotSaved": "ذخیره تغییرات ممکن نشد. فضای ذخیره‌سازی مرورگر را بررسی کنید."
+  },
+  "about": {
+    "title": "درباره",
+    "studio": "Motabar Labs",
+    "tagline": "سه‌تا پشت سر هم. یک دور دیگر.",
+    "storyHeading": "بازی کوچکی با داستانی طولانی",
+    "storyParagraphOne": "این بازی در سال ۲۰۱۷ به‌عنوان پروژه‌ای آموزشی از سوی شاهرخ شمیم آغاز شد تا بررسی کند رایانه چگونه حرکت بعدی خود را برنامه‌ریزی می‌کند.",
+    "storyParagraphTwo": "سال‌ها بعد، با ظاهری تازه و در گوشی شما بازگشته است. کنجکاوی آغازین هنوز زنده است.",
+    "customizeHeading": "بازی را برای خودت بساز",
+    "customizeDescription": "آفلاین با رایانه بازی کن. درجه سختی، نماد و رنگت را انتخاب کن و در تنظیمات مشخص کن چه کسی شروع کند.",
+    "openSettings": "باز کردن تنظیمات",
+    "footer": "با کنجکاوی آغاز شد. برای بازی ساخته شد."
+  },
+  "game": {
+    "playerSymbols": "نمادهای بازیکنان",
+    "you": "شما",
+    "versus": "در برابر",
+    "computer": "رایانه",
+    "board": "صفحه بازی",
+    "ticTacToeBoard": "صفحه دوز",
+    "resign": "انصراف",
+    "resignLabel": "از این دور خارج می‌شوید؟",
+    "resignConfirmation": "مطمئنید که می‌خواهید انصراف دهید؟",
+    "confirmResign": "بله، انصراف می‌دهم",
+    "roundComplete": "دور بازی تمام شد",
+    "playAgain": "یک دور دیگر بازی کن",
+    "returnToMainMenu": "بازگشت به منوی اصلی",
+    "cancel": "لغو"
+  },
+  "results": {
+    "winTitle": "برنده شدی! 🎉",
+    "winMessage": "سه‌تا پشت سر هم. این دور مال توست!",
+    "lossTitle": "رایانه برنده شد 😎",
+    "lossMessage": "رایانه این دور را برد. برای بازی دوباره آماده‌ای؟",
+    "drawTitle": "مساوی شد! 🤝",
+    "drawMessage": "همه خانه‌ها پر شدند. بازی نزدیکی بود!",
+    "resignTitle": "رایانه برنده شد 😎",
+    "resignMessage": "از این دور انصراف دادی. صفحه‌ای تازه منتظر توست."
+  }
+}

@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Tic Tac Toe</title>
+	<title data-i18n="common.gameTitle">Tic Tac Toe</title>
 	<link rel="stylesheet" href="theme.css">
 	<link rel="stylesheet" href="components.css">
 	<link rel="stylesheet" href="svg.css">
 	<link rel="stylesheet" href="dialogs.css">
     <script src="preferences.js"></script>
+    <script src="localization.js"></script>
 </head>
 <body id="body">
 <header class="game-header">
-    <p class="eyebrow">Tic Tac Toe</p>
-    <div class="player-legend" aria-label="Player symbols">
-        <span><b id="your-symbol" class="mark-x" aria-hidden="true">×</b> You</span>
-        <span class="legend-divider" aria-hidden="true">vs</span>
-        <span><b id="computer-symbol" class="mark-o" aria-hidden="true">○</b> Computer</span>
+    <p class="eyebrow" data-i18n="common.gameTitle">Tic Tac Toe</p>
+    <div class="player-legend" aria-label="Player symbols" data-i18n-aria-label="game.playerSymbols">
+        <span><b id="your-symbol" class="mark-x" aria-hidden="true">×</b> <span data-i18n="game.you">You</span></span>
+        <span class="legend-divider" aria-hidden="true" data-i18n="game.versus">vs</span>
+        <span><b id="computer-symbol" class="mark-o" aria-hidden="true">○</b> <span data-i18n="game.computer">Computer</span></span>
     </div>
 </header>
-<main class="game-stage" aria-label="Game board">
-<svg id='mySVG' viewBox='100 100 400 400' role="group" aria-label="Tic tac toe board">
+<main class="game-stage" aria-label="Game board" data-i18n-aria-label="game.board">
+<svg id='mySVG' viewBox='100 100 400 400' role="group" aria-label="Tic tac toe board" data-i18n-aria-label="game.ticTacToeBoard">
 
 <!-- SVG for circles -->
 
@@ -94,25 +95,25 @@
 </svg>
 </main>
 <div class="game-controls">
-	<button type="button" id="resign" class="button button--secondary"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#flag"/></svg>Resign</button>
+	<button type="button" id="resign" class="button button--secondary"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#flag"/></svg><span data-i18n="game.resign">Resign</span></button>
 </div>
 <dialog id="resign-confirmation" class="result-card" data-outcome="resign" aria-labelledby="resign-title">
-	<p class="result-label">LEAVE THIS ROUND?</p>
+	<p class="result-label" data-i18n="game.resignLabel">LEAVE THIS ROUND?</p>
 	<div class="result-icon" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#flag"/></svg></div>
-	<h2 id="resign-title">Are you sure you want to resign?</h2>
+	<h2 id="resign-title" data-i18n="game.resignConfirmation">Are you sure you want to resign?</h2>
 	<div class="dialog-actions">
-		<button type="button" id="confirm-resign">Yes, resign</button>
-		<button type="button" id="cancel-resign" class="secondary-action" autofocus>Cancel</button>
+		<button type="button" id="confirm-resign" data-i18n="game.confirmResign">Yes, resign</button>
+		<button type="button" id="cancel-resign" class="secondary-action" autofocus data-i18n="game.cancel">Cancel</button>
 	</div>
 </dialog>
 <dialog id="game-result" class="result-card" aria-labelledby="result-title" aria-describedby="result-message">
 	<div class="result-sparkles" aria-hidden="true"><span>✦</span><span>●</span><span>✧</span><span>✦</span></div>
-	<p class="result-label">ROUND COMPLETE</p>
+	<p class="result-label" data-i18n="game.roundComplete">ROUND COMPLETE</p>
 	<div id="result-icon" class="result-icon" aria-hidden="true"></div>
 	<h2 id="result-title"></h2>
 	<p id="result-message" class="result-message"></p>
-	<button type="button" id="play-again" autofocus>Play another game <span aria-hidden="true">↻</span></button>
-	<button type="button" id="return-menu" class="secondary-action">Return to main menu <span aria-hidden="true">→</span></button>
+	<button type="button" id="play-again" autofocus><span data-i18n="game.playAgain">Play another game</span> <span aria-hidden="true">↻</span></button>
+	<button type="button" id="return-menu" class="secondary-action"><span data-i18n="game.returnToMainMenu">Return to main menu</span> <span aria-hidden="true">→</span></button>
 </dialog>
 <script type="text/javascript" src="animation.js">
 </script>

@@ -1,7 +1,10 @@
 var settingsForm = document.getElementById('settings-form');
 var saveStatus = document.getElementById('save-status');
 var savedSettings = Preferences.get();
+var languageSelect = document.getElementById('language');
+var currentLanguage = savedSettings.language;
 
+languageSelect.value = currentLanguage;
 settingsForm.querySelectorAll('input[type="radio"]').forEach(function(input) {
     if (Object.prototype.hasOwnProperty.call(savedSettings, input.name)) {
         input.checked = savedSettings[input.name] === input.value;
@@ -9,9 +12,21 @@ settingsForm.querySelectorAll('input[type="radio"]').forEach(function(input) {
 });
 
 settingsForm.addEventListener('submit', function(event) { event.preventDefault(); });
+languageSelect.addEventListener('change', function() {
+    var language = languageSelect.value;
+    Localization.setLanguage(language).then(function() {
+        currentLanguage = language;
+        var saved = Preferences.update('language', language);
+        saveStatus.textContent = Localization.t(saved ? 'settings.changesSaved' : 'settings.changesNotSaved');
+    }).catch(function(error) {
+        console.error(error);
+        languageSelect.value = currentLanguage;
+        saveStatus.textContent = Localization.t('settings.languageLoadFailed');
+    });
+});
 settingsForm.addEventListener('change', function(event) {
     var input = event.target;
     if (!input.matches('input[type="radio"]') || !input.checked) return;
     var saved = Preferences.update(input.name, input.value);
-    saveStatus.textContent = saved ? 'Changes saved automatically' : 'Changes could not be saved. Check your browser storage.';
+    saveStatus.textContent = Localization.t(saved ? 'settings.changesSaved' : 'settings.changesNotSaved');
 });

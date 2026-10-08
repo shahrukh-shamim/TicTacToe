@@ -14,6 +14,22 @@
     padding: 20px;
 }
 
+.language-card select {
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font: inherit;
+}
+
+.language-card select:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 4px;
+}
+
 .settings-card h2 {
     margin: 0 0 16px;
     font-size: 20px;

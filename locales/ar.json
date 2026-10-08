@@ -1,0 +1,92 @@
+{
+  "languageName": "العربية",
+  "direction": "rtl",
+  "common": {
+    "gameTitle": "إكس-أو",
+    "backToMainMenu": "العودة إلى القائمة الرئيسية",
+    "gotIt": "حسنًا",
+    "cancel": "إلغاء"
+  },
+  "pages": {
+    "menuTitle": "إكس-أو",
+    "settingsTitle": "الإعدادات · إكس-أو",
+    "aboutTitle": "حول اللعبة · إكس-أو"
+  },
+  "menu": {
+    "tagline": "خطوتك التالية تبدأ من هنا",
+    "navigationLabel": "القائمة الرئيسية",
+    "play": "العب",
+    "playOnline": "العب عبر الإنترنت",
+    "settings": "الإعدادات",
+    "about": "حول اللعبة",
+    "exit": "خروج",
+    "onlineComingSoonLabel": "العب عبر الإنترنت",
+    "onlineComingSoonTitle": "قريبًا جدًا"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "language": "اللغة",
+    "languageLabel": "اختر اللغة",
+    "languageLoadFailed": "تعذّر تحميل هذه اللغة. يُرجى المحاولة مرة أخرى.",
+    "yourSymbol": "رمزك",
+    "symbols": "الرموز",
+    "playAsO": "العب بدائرة",
+    "playAsX": "العب بإكس",
+    "yourMarkColor": "لون رموزك",
+    "colors": "الألوان",
+    "cyanMarks": "رموز باللون السماوي",
+    "coralMarks": "رموز باللون المرجاني",
+    "difficulty": "مستوى الصعوبة",
+    "easy": "سهل",
+    "medium": "متوسط",
+    "hard": "صعب",
+    "preferredFirstTurn": "من يبدأ اللعب ضد الكمبيوتر؟",
+    "onePlayerFirstTurn": "دور اللاعب الأول",
+    "computer": "الكمبيوتر",
+    "you": "١P",
+    "alternate": "بالتناوب",
+    "alternateNote": "يتناوب اللاعبان على البداية في كل جولة، وتبدأ أنت أولًا.",
+    "twoPlayerFirstTurn": "دور اللاعبَين",
+    "twoPlayerModeComingSoon": "اللعب مع صديق قريبًا",
+    "changesSaved": "تُحفظ التغييرات تلقائيًا",
+    "changesNotSaved": "تعذّر حفظ التغييرات. تحقّق من مساحة التخزين في المتصفح."
+  },
+  "about": {
+    "title": "حول اللعبة",
+    "studio": "Motabar Labs",
+    "tagline": "ثلاثة على التوالي. جولة أخرى.",
+    "storyHeading": "لعبة صغيرة وقصة طويلة",
+    "storyParagraphOne": "بدأت هذه اللعبة عام ٢٠١٧ كمشروع تعلّم لشاهرخ شميم، لاستكشاف كيفية تخطيط الكمبيوتر لخطوته التالية.",
+    "storyParagraphTwo": "وبعد سنوات، عادت بتصميم جديد إلى هاتفك. وما زال الشغف الذي بدأها حاضرًا.",
+    "customizeHeading": "اجعلها لعبتك",
+    "customizeDescription": "العب دون اتصال ضد الكمبيوتر. اختر مستوى الصعوبة ورمزك ولونك، وحدد من يبدأ من الإعدادات.",
+    "openSettings": "فتح الإعدادات",
+    "footer": "بدأت بفضول. وصُممت للعب."
+  },
+  "game": {
+    "playerSymbols": "رموز اللاعبين",
+    "you": "أنت",
+    "versus": "ضد",
+    "computer": "الكمبيوتر",
+    "board": "لوحة اللعب",
+    "ticTacToeBoard": "لوحة إكس-أو",
+    "resign": "انسحب",
+    "resignLabel": "هل تريد مغادرة هذه الجولة؟",
+    "resignConfirmation": "هل أنت متأكد من رغبتك في الانسحاب؟",
+    "confirmResign": "نعم، انسحب",
+    "roundComplete": "انتهت الجولة",
+    "playAgain": "العب جولة أخرى",
+    "returnToMainMenu": "العودة إلى القائمة الرئيسية",
+    "cancel": "إلغاء"
+  },
+  "results": {
+    "winTitle": "أنت الفائز! 🎉",
+    "winMessage": "ثلاثة على التوالي. هذه الجولة لك!",
+    "lossTitle": "فاز الكمبيوتر 😎",
+    "lossMessage": "فاز الكمبيوتر بهذه الجولة. هل أنت مستعد لجولة جديدة؟",
+    "drawTitle": "تعادل! 🤝",
+    "drawMessage": "امتلأت كل الخانات. كانت مباراة متكافئة!",
+    "resignTitle": "فاز الكمبيوتر 😎",
+    "resignMessage": "انسحبت من هذه الجولة. لوحة جديدة بانتظارك."
+  }
+}

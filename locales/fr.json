@@ -1,0 +1,92 @@
+{
+  "languageName": "Français",
+  "direction": "ltr",
+  "common": {
+    "gameTitle": "Morpion",
+    "backToMainMenu": "Retour au menu principal",
+    "gotIt": "Compris",
+    "cancel": "Annuler"
+  },
+  "pages": {
+    "menuTitle": "Morpion",
+    "settingsTitle": "Paramètres · Morpion",
+    "aboutTitle": "À propos · Morpion"
+  },
+  "menu": {
+    "tagline": "Votre prochain coup commence ici",
+    "navigationLabel": "Menu principal",
+    "play": "Jouer",
+    "playOnline": "Jouer en ligne",
+    "settings": "Paramètres",
+    "about": "À propos",
+    "exit": "Quitter",
+    "onlineComingSoonLabel": "Jouer en ligne",
+    "onlineComingSoonTitle": "Bientôt, très bientôt"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "language": "Langue",
+    "languageLabel": "Choisir la langue",
+    "languageLoadFailed": "Impossible de charger cette langue. Veuillez réessayer.",
+    "yourSymbol": "Votre symbole",
+    "symbols": "Symboles",
+    "playAsO": "Jouer avec O",
+    "playAsX": "Jouer avec X",
+    "yourMarkColor": "Couleur de vos symboles",
+    "colors": "Couleurs",
+    "cyanMarks": "Symboles cyan",
+    "coralMarks": "Symboles corail",
+    "difficulty": "Difficulté",
+    "easy": "Facile",
+    "medium": "Moyenne",
+    "hard": "Difficile",
+    "preferredFirstTurn": "Qui commence contre l’ordinateur ?",
+    "onePlayerFirstTurn": "Premier tour (1 joueur)",
+    "computer": "Ordinateur",
+    "you": "1P",
+    "alternate": "À tour de rôle",
+    "alternateNote": "Le premier joueur change à chaque partie. Vous commencez.",
+    "twoPlayerFirstTurn": "Premier tour (2 joueurs)",
+    "twoPlayerModeComingSoon": "Mode deux joueurs bientôt disponible",
+    "changesSaved": "Modifications enregistrées automatiquement",
+    "changesNotSaved": "Impossible d’enregistrer les modifications. Vérifiez le stockage de votre navigateur."
+  },
+  "about": {
+    "title": "À propos",
+    "studio": "Motabar Labs",
+    "tagline": "Trois à la suite. Une autre partie.",
+    "storyHeading": "Un petit jeu avec une longue histoire",
+    "storyParagraphOne": "Ce jeu a commencé en 2017 comme projet d’apprentissage de Shahrukh Shamim, qui explorait la façon dont un ordinateur pouvait prévoir son prochain coup.",
+    "storyParagraphTwo": "Des années plus tard, il revient avec un nouveau look et s’installe sur votre téléphone. La curiosité des débuts est toujours là.",
+    "customizeHeading": "Personnalisez votre partie",
+    "customizeDescription": "Jouez hors ligne contre l’ordinateur. Choisissez la difficulté, votre symbole et sa couleur, puis décidez qui commence dans les paramètres.",
+    "openSettings": "Ouvrir les paramètres",
+    "footer": "Né de la curiosité. Fait pour jouer."
+  },
+  "game": {
+    "playerSymbols": "Symboles des joueurs",
+    "you": "Vous",
+    "versus": "contre",
+    "computer": "Ordinateur",
+    "board": "Plateau de jeu",
+    "ticTacToeBoard": "Plateau de morpion",
+    "resign": "Abandonner",
+    "resignLabel": "Quitter cette partie ?",
+    "resignConfirmation": "Voulez-vous vraiment abandonner ?",
+    "confirmResign": "Oui, abandonner",
+    "roundComplete": "Partie terminée",
+    "playAgain": "Rejouer",
+    "returnToMainMenu": "Retour au menu principal",
+    "cancel": "Annuler"
+  },
+  "results": {
+    "winTitle": "Vous gagnez ! 🎉",
+    "winMessage": "Trois à la suite. Cette partie est à vous !",
+    "lossTitle": "L’ordinateur gagne 😎",
+    "lossMessage": "L’ordinateur remporte cette partie. Prêt pour la revanche ?",
+    "drawTitle": "Match nul ! 🤝",
+    "drawMessage": "Toutes les cases sont remplies. Une partie très équilibrée !",
+    "resignTitle": "L’ordinateur gagne 😎",
+    "resignMessage": "Vous avez abandonné cette partie. Un nouveau plateau vous attend."
+  }
+}
