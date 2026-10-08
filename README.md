@@ -19,6 +19,10 @@ Settings controls who starts each game: Computer, 1P, or Alternate. Alternate
 begins with the player and remembers the next starter across games and visits.
 Play and Play another game start directly, without a first-turn popup.
 
+Two players shares one device, with Player 1 using your saved symbol and color.
+Choose Player 1 or Player 2 as the starter under 2P First Turn in Settings.
+Replay keeps the same mode; single-player starter preferences are independent.
+
 ## Project layout
 
 - `src/`: HTML pages and browser files.

@@ -153,3 +153,9 @@
 #rect9 {
     stroke-dasharray: 100,200,200;
 }
+
+.turn-status {
+    margin: 10px 0 0;
+    color: var(--color-muted);
+    font-size: 14px;
+}

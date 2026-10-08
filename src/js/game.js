@@ -127,7 +127,10 @@ board =
 var colors = getCookie('colors');
 var level  = getCookie('level');
 var marks  = getCookie('marks');
-var user   = Preferences.beginGame();
+var twoPlayer = window.location.search === '?mode=two-player';
+var currentPlayer = twoPlayer ? Number(Preferences.get().twoPlayerFirst) : 1;
+var moving = false;
+var user   = twoPlayer ? true : Preferences.beginGame();
 var game   = true;
 /*	-------	*/
 
@@ -157,6 +160,21 @@ yourSymbol.textContent = userMark === 1 ? '×' : '○';
 yourSymbol.className = userMark === 1 ? 'mark-x' : 'mark-o';
 computerSymbol.textContent = userMark === 1 ? '○' : '×';
 computerSymbol.className = userMark === 1 ? 'mark-o' : 'mark-x';
+
+if (twoPlayer) {
+    document.getElementById('player-one-label').dataset.i18n = 'game.playerOne';
+    document.getElementById('player-two-label').dataset.i18n = 'game.playerTwo';
+}
+function updateTurnStatus() {
+    Localization.ready.then(function() {
+        if (!twoPlayer) return;
+        document.getElementById('player-one-label').textContent = Localization.t('game.playerOne');
+        document.getElementById('player-two-label').textContent = Localization.t('game.playerTwo');
+        document.getElementById('turn-status').textContent = game
+            ? Localization.t(currentPlayer === 1 ? 'game.playerOneTurn' : 'game.playerTwoTurn') : '';
+    });
+}
+updateTurnStatus();
 
 /*A recursive function to mark a move animately (for both computer and user)*/
 
@@ -195,7 +213,7 @@ function finishTurn(player)
     if (!game) return true;
     if (player === 1 ? isWin() : isLoss())
     {
-        endGame(player === 1 ? 'win' : 'loss');
+        endGame(twoPlayer ? (player === 1 ? 'playerOneWin' : 'playerTwoWin') : (player === 1 ? 'win' : 'loss'));
         return true;
     }
     if (board.every(function(row) {
@@ -213,19 +231,30 @@ for (var i = 0; i < rects.length; i++)
 {
     rects[i].addEventListener('click', function()
     {
-        if (!ready || !user || !game || this.dataset.occupied !== 'false') return;
+        if (!ready || moving || (!twoPlayer && !user) || !game || this.dataset.occupied !== 'false') return;
+        moving = true;
+        if (twoPlayer) document.getElementById('resign').disabled = true;
+        var player = twoPlayer ? currentPlayer : 1;
         user = false;
         var id = Number(this.id.slice(4));
         this.dataset.occupied = 'true';
-        board[Math.floor((id - 1) / 3)][(id - 1) % 3] = 1;
+        board[Math.floor((id - 1) / 3)][(id - 1) % 3] = player;
         var complete = function() {
-            if (!finishTurn(1)) controller.postMessage(board);
+            moving = false;
+            if (twoPlayer) document.getElementById('resign').disabled = false;
+            if (finishTurn(player)) return;
+            if (twoPlayer) {
+                currentPlayer = 3 - currentPlayer;
+                updateTurnStatus();
+            } else controller.postMessage(board);
         };
-        if (userMark === 0) markCircle(id, complete);
+        var symbol = player === 1 ? userMark : 1 - userMark;
+        if (symbol === 0) markCircle(id, complete);
         else markCross(String(id), complete);
     });
 }
 
+if (!twoPlayer) {
 switch (level)
 {
 	case '1':
@@ -271,4 +300,6 @@ if (!user)
     else document.addEventListener('board-ready', function() {
         if (game) controller.postMessage(board);
     }, { once: true });
+}
+
 }

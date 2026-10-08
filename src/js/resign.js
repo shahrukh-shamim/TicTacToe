@@ -12,5 +12,5 @@ document.getElementById('cancel-resign').addEventListener('click', function() {
 document.getElementById('confirm-resign').addEventListener('click', function() {
     resignConfirmation.close();
     if (!game) return;
-    endGame('resign');
+    endGame(twoPlayer ? (currentPlayer === 1 ? 'playerTwoWin' : 'playerOneWin') : 'resign');
 });

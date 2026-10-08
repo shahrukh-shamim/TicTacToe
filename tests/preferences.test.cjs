@@ -82,3 +82,16 @@ test('Play and replay navigate directly without creating a chooser', () => {
     assert.equal(closed, true);
     assert.equal(context.window.location.href, 'game.html');
 });
+
+test('local starter persists independently of single-player alternation', () => {
+    const store = new Map();
+    const prefs = load(store);
+    assert.equal(prefs.get().twoPlayerFirst, '1');
+    assert.equal(prefs.update('twoPlayerFirst', '2'), true);
+    assert.equal(load(store).get().twoPlayerFirst, '2');
+    assert.equal(prefs.update('twoPlayerFirst', 'computer'), false);
+    prefs.update('firstTurn', 'alternate');
+    assert.equal(prefs.beginGame(), true);
+    prefs.update('twoPlayerFirst', '1');
+    assert.equal(load(store).beginGame(), false);
+});

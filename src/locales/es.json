@@ -48,7 +48,6 @@
     "alternate": "Alternar",
     "alternateNote": "El turno inicial cambia en cada partida; empiezas tú.",
     "twoPlayerFirstTurn": "Primer turno (2 jugadores)",
-    "twoPlayerModeComingSoon": "El modo para dos jugadores llegará pronto",
     "changesSaved": "Los cambios se guardan automáticamente",
     "changesNotSaved": "No se pudieron guardar los cambios. Comprueba el almacenamiento del navegador."
   },
@@ -78,7 +77,11 @@
     "roundComplete": "Partida terminada",
     "playAgain": "Jugar otra partida",
     "returnToMainMenu": "Volver al menú principal",
-    "cancel": "Cancelar"
+    "cancel": "Cancelar",
+    "playerOne": "Jugador 1",
+    "playerTwo": "Jugador 2",
+    "playerOneTurn": "Turno del jugador 1",
+    "playerTwoTurn": "Turno del jugador 2"
   },
   "results": {
     "winTitle": "¡Has ganado! 🎉",
@@ -88,6 +91,9 @@
     "drawTitle": "¡Empate! 🤝",
     "drawMessage": "Todas las casillas están ocupadas. ¡Un final muy igualado!",
     "resignTitle": "Gana el ordenador 😎",
-    "resignMessage": "Has abandonado esta partida. Te espera un tablero nuevo."
+    "resignMessage": "Has abandonado esta partida. Te espera un tablero nuevo.",
+    "playerOneWin": "¡Gana el jugador 1! 🎉",
+    "playerTwoWin": "¡Gana el jugador 2! 🎉",
+    "localWinMessage": "¡Esta ronda es tuya! ¿Listo para la revancha?"
   }
 }

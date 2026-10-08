@@ -1,5 +1,7 @@
 var resultDialog = document.getElementById('game-result');
 var resultContent = {
+    playerOneWin: { title: 'results.playerOneWin', icon: 'trophy', message: 'results.localWinMessage' },
+    playerTwoWin: { title: 'results.playerTwoWin', icon: 'trophy', message: 'results.localWinMessage' },
     win: { title: 'results.winTitle', icon: 'trophy', message: 'results.winMessage' },
     loss: { title: 'results.lossTitle', icon: 'robot', message: 'results.lossMessage' },
     draw: { title: 'results.drawTitle', icon: 'sparkle', message: 'results.drawMessage' },
@@ -10,7 +12,8 @@ function endGame(outcome) {
     if (!game) return;
     game = false;
     user = false;
-    controller.terminate();
+    if (controller) controller.terminate();
+    updateTurnStatus();
     document.getElementById('resign').disabled = true;
     var confirmation = document.getElementById('resign-confirmation');
     if (confirmation.open) confirmation.close();

@@ -48,7 +48,6 @@
     "alternate": "یکی‌درمیان",
     "alternateNote": "شروع بازی در هر دور عوض می‌شود و ابتدا شما شروع می‌کنید.",
     "twoPlayerFirstTurn": "نوبت شروع دونفره",
-    "twoPlayerModeComingSoon": "بازی دونفره به‌زودی",
     "changesSaved": "تغییرات به‌طور خودکار ذخیره می‌شوند",
     "changesNotSaved": "ذخیره تغییرات ممکن نشد. فضای ذخیره‌سازی مرورگر را بررسی کنید."
   },
@@ -78,7 +77,11 @@
     "roundComplete": "دور بازی تمام شد",
     "playAgain": "یک دور دیگر بازی کن",
     "returnToMainMenu": "بازگشت به منوی اصلی",
-    "cancel": "لغو"
+    "cancel": "لغو",
+    "playerOne": "بازیکن ۱",
+    "playerTwo": "بازیکن ۲",
+    "playerOneTurn": "نوبت بازیکن ۱",
+    "playerTwoTurn": "نوبت بازیکن ۲"
   },
   "results": {
     "winTitle": "برنده شدی! 🎉",
@@ -88,6 +91,9 @@
     "drawTitle": "مساوی شد! 🤝",
     "drawMessage": "همه خانه‌ها پر شدند. بازی نزدیکی بود!",
     "resignTitle": "رایانه برنده شد 😎",
-    "resignMessage": "از این دور انصراف دادی. صفحه‌ای تازه منتظر توست."
+    "resignMessage": "از این دور انصراف دادی. صفحه‌ای تازه منتظر توست.",
+    "playerOneWin": "بازیکن ۱ برنده شد! 🎉",
+    "playerTwoWin": "بازیکن ۲ برنده شد! 🎉",
+    "localWinMessage": "این دور مال توست! آمادهٔ بازی دوباره‌ای؟"
   }
 }

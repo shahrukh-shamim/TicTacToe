@@ -48,7 +48,6 @@
     "alternate": "À tour de rôle",
     "alternateNote": "Le premier joueur change à chaque partie. Vous commencez.",
     "twoPlayerFirstTurn": "Premier tour (2 joueurs)",
-    "twoPlayerModeComingSoon": "Mode deux joueurs bientôt disponible",
     "changesSaved": "Modifications enregistrées automatiquement",
     "changesNotSaved": "Impossible d’enregistrer les modifications. Vérifiez le stockage de votre navigateur."
   },
@@ -78,7 +77,11 @@
     "roundComplete": "Partie terminée",
     "playAgain": "Rejouer",
     "returnToMainMenu": "Retour au menu principal",
-    "cancel": "Annuler"
+    "cancel": "Annuler",
+    "playerOne": "Joueur 1",
+    "playerTwo": "Joueur 2",
+    "playerOneTurn": "Au tour du joueur 1",
+    "playerTwoTurn": "Au tour du joueur 2"
   },
   "results": {
     "winTitle": "Vous gagnez ! 🎉",
@@ -88,6 +91,9 @@
     "drawTitle": "Match nul ! 🤝",
     "drawMessage": "Toutes les cases sont remplies. Une partie très équilibrée !",
     "resignTitle": "L’ordinateur gagne 😎",
-    "resignMessage": "Vous avez abandonné cette partie. Un nouveau plateau vous attend."
+    "resignMessage": "Vous avez abandonné cette partie. Un nouveau plateau vous attend.",
+    "playerOneWin": "Le joueur 1 gagne ! 🎉",
+    "playerTwoWin": "Le joueur 2 gagne ! 🎉",
+    "localWinMessage": "Cette manche est à toi ! Prêt pour la revanche ?"
   }
 }

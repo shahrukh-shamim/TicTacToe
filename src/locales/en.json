@@ -48,7 +48,6 @@
     "alternate": "Alternate",
     "alternateNote": "Alternate switches the starter each game, beginning with you.",
     "twoPlayerFirstTurn": "2P First Turn",
-    "twoPlayerModeComingSoon": "Two-player mode coming soon",
     "changesSaved": "Changes saved automatically",
     "changesNotSaved": "Changes could not be saved. Check your browser storage."
   },
@@ -78,7 +77,11 @@
     "roundComplete": "Round complete",
     "playAgain": "Play another game",
     "returnToMainMenu": "Return to main menu",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "playerOne": "Player 1",
+    "playerTwo": "Player 2",
+    "playerOneTurn": "Player 1’s turn",
+    "playerTwoTurn": "Player 2’s turn"
   },
   "results": {
     "winTitle": "You win! 🎉",
@@ -88,6 +91,9 @@
     "drawTitle": "It’s a draw! 🤝",
     "drawMessage": "Every square filled. An evenly matched finish!",
     "resignTitle": "Computer wins 😎",
-    "resignMessage": "You resigned this round. A fresh board awaits."
+    "resignMessage": "You resigned this round. A fresh board awaits.",
+    "playerOneWin": "Player 1 wins! 🎉",
+    "playerTwoWin": "Player 2 wins! 🎉",
+    "localWinMessage": "This round is yours! Ready for a rematch?"
   }
 }

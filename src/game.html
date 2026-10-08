@@ -15,10 +15,11 @@
 <header class="game-header">
     <p class="eyebrow" data-i18n="common.gameTitle">Tic Tac Toe</p>
     <div class="player-legend" aria-label="Player symbols" data-i18n-aria-label="game.playerSymbols">
-        <span><b id="your-symbol" class="mark-x" aria-hidden="true">×</b> <span data-i18n="game.you">You</span></span>
+        <span><b id="your-symbol" class="mark-x" aria-hidden="true">×</b> <span id="player-one-label" data-i18n="game.you">You</span></span>
         <span class="legend-divider" aria-hidden="true" data-i18n="game.versus">vs</span>
-        <span><b id="computer-symbol" class="mark-o" aria-hidden="true">○</b> <span data-i18n="game.computer">Computer</span></span>
+        <span><b id="computer-symbol" class="mark-o" aria-hidden="true">○</b> <span id="player-two-label" data-i18n="game.computer">Computer</span></span>
     </div>
+    <p id="turn-status" class="turn-status" role="status" aria-live="polite"></p>
 </header>
 <main class="game-stage" aria-label="Game board" data-i18n-aria-label="game.board">
 <svg id='mySVG' viewBox='100 100 400 400' role="group" aria-label="Tic tac toe board" data-i18n-aria-label="game.ticTacToeBoard">

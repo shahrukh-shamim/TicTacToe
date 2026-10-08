@@ -1,6 +1,6 @@
 // Both Play and Play another game use the starter configured in Settings.
 function startGame() {
-    window.location.href = 'game.html';
+    window.location.href = 'game.html' + (window.location.search === '?mode=two-player' ? '?mode=two-player' : '');
 }
 
 var playButton = document.getElementById('play');

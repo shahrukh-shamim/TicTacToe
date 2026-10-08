@@ -48,7 +48,6 @@
     "alternate": "Abwechselnd",
     "alternateNote": "Die Startperson wechselt in jeder Runde. Du beginnst.",
     "twoPlayerFirstTurn": "2P: Erster Zug",
-    "twoPlayerModeComingSoon": "Mehrspielermodus folgt bald",
     "changesSaved": "Änderungen werden automatisch gespeichert",
     "changesNotSaved": "Änderungen konnten nicht gespeichert werden. Überprüfe deinen Browserspeicher."
   },
@@ -78,7 +77,11 @@
     "roundComplete": "Runde beendet",
     "playAgain": "Noch eine Runde spielen",
     "returnToMainMenu": "Zurück zum Hauptmenü",
-    "cancel": "Abbrechen"
+    "cancel": "Abbrechen",
+    "playerOne": "Spieler 1",
+    "playerTwo": "Spieler 2",
+    "playerOneTurn": "Spieler 1 ist dran",
+    "playerTwoTurn": "Spieler 2 ist dran"
   },
   "results": {
     "winTitle": "Du gewinnst! 🎉",
@@ -88,6 +91,9 @@
     "drawTitle": "Unentschieden! 🤝",
     "drawMessage": "Alle Felder sind voll. Ein ausgeglichenes Spiel!",
     "resignTitle": "Der Computer gewinnt 😎",
-    "resignMessage": "Du hast diese Runde aufgegeben. Ein neues Spielfeld wartet."
+    "resignMessage": "Du hast diese Runde aufgegeben. Ein neues Spielfeld wartet.",
+    "playerOneWin": "Spieler 1 gewinnt! 🎉",
+    "playerTwoWin": "Spieler 2 gewinnt! 🎉",
+    "localWinMessage": "Diese Runde gehört dir! Bereit für eine Revanche?"
   }
 }

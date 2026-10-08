@@ -48,7 +48,6 @@
     "alternate": "بالتناوب",
     "alternateNote": "يتناوب اللاعبان على البداية في كل جولة، وتبدأ أنت أولًا.",
     "twoPlayerFirstTurn": "دور اللاعبَين",
-    "twoPlayerModeComingSoon": "اللعب مع صديق قريبًا",
     "changesSaved": "تُحفظ التغييرات تلقائيًا",
     "changesNotSaved": "تعذّر حفظ التغييرات. تحقّق من مساحة التخزين في المتصفح."
   },
@@ -78,7 +77,11 @@
     "roundComplete": "انتهت الجولة",
     "playAgain": "العب جولة أخرى",
     "returnToMainMenu": "العودة إلى القائمة الرئيسية",
-    "cancel": "إلغاء"
+    "cancel": "إلغاء",
+    "playerOne": "اللاعب 1",
+    "playerTwo": "اللاعب 2",
+    "playerOneTurn": "دور اللاعب 1",
+    "playerTwoTurn": "دور اللاعب 2"
   },
   "results": {
     "winTitle": "أنت الفائز! 🎉",
@@ -88,6 +91,9 @@
     "drawTitle": "تعادل! 🤝",
     "drawMessage": "امتلأت كل الخانات. كانت مباراة متكافئة!",
     "resignTitle": "فاز الكمبيوتر 😎",
-    "resignMessage": "انسحبت من هذه الجولة. لوحة جديدة بانتظارك."
+    "resignMessage": "انسحبت من هذه الجولة. لوحة جديدة بانتظارك.",
+    "playerOneWin": "فاز اللاعب 1! 🎉",
+    "playerTwoWin": "فاز اللاعب 2! 🎉",
+    "localWinMessage": "هذه الجولة لك! هل أنت مستعد لجولة أخرى؟"
   }
 }
